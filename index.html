@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="de" class="scroll-smooth">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ascensio Swiss | Generalunternehmung & Hallenbau</title>
+    <title>Beton- und Stahlhallen | Ascensio Swiss</title>
+    <meta name="description" content="Ascensio Swiss plant und begleitet Beton- und Stahlhallen für Logistik, Produktion und Gewerbe in der Schweiz.">
 
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -44,213 +45,193 @@
     <!-- External Libraries & Main JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.umd.js"></script>
     <script src="js/main.js" defer></script>
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
-<body x-data="{ mobileOpen: false, modalOpen: false, currentTab: 'sanitaer' }" class="antialiased">
+<body x-data="site" class="antialiased">
 
-    <!-- TOP HEADER -->
-    <header class="fixed top-0 left-0 right-0 z-50 bg-swiss-panel/95 backdrop-blur-md border-b border-slate-300 transition-all duration-300">
-        <div class="max-w-7xl mx-auto px-6 h-22 flex items-center justify-between py-3">
-            
-            <!-- OFFICIAL AS SWISS LOGO (SVG FILE LINK) -->
-            <a href="#" class="flex items-center gap-3 group">
-                <img src="assets/logo.svg" alt="Ascensio Swiss Logo" class="logo-svg-header transition-transform duration-300 group-hover:scale-105">
-            </a>
-
-            <!-- MAIN DESKTOP NAVIGATION -->
-            <nav class="hidden lg:flex items-center space-x-9 text-sm font-bold text-slate-700 tracking-tight">
-                <a href="#hallenbau" class="hover:text-swiss-red transition-colors">Beton- & Stahlhallen</a>
-                <a href="#konfigurator" class="hover:text-swiss-red transition-colors">Konfigurator</a>
-                <a href="#ueber-uns" class="hover:text-swiss-red transition-colors">Über uns</a>
-                <a href="#gewerke" class="hover:text-swiss-red transition-colors">Gewerke & TZB</a>
-                <a href="#kontakt" class="hover:text-swiss-red transition-colors">Kontakt</a>
-            </nav>
-
-            <!-- ACTION CTA BUTTON -->
-            <div class="hidden sm:flex items-center gap-4">
-                <span class="text-[11px] font-mono font-bold text-slate-400 bg-slate-100 px-3 py-1.5 rounded-md border border-slate-200">SIA NORME</span>
-                <button @click="modalOpen = true" class="bg-swiss-graphite hover:bg-swiss-graphite-hover text-white font-bold text-xs sm:text-sm px-6 py-3.5 rounded-xl transition-all shadow-md action-shadow flex items-center gap-2">
-                    <i class="fa-solid fa-calculator text-xs"></i>
-                    <span>Halle berechnen</span>
-                </button>
-            </div>
-
-            <!-- MOBILE MENU TRIGGER -->
-            <button @click="mobileOpen = !mobileOpen" class="lg:hidden text-slate-800 p-2 focus:outline-none">
-                <i class="fa-solid text-xl" :class="mobileOpen ? 'fa-xmark' : 'fa-bars'"></i>
-            </button>
-        </div>
-
-        <!-- MOBILE MENU POPUP -->
-        <div x-show="mobileOpen" x-transition class="lg:hidden bg-white border-b border-slate-200 px-6 py-6 space-y-4">
-            <a href="#hallenbau" @click="mobileOpen = false" class="block font-bold text-slate-800 py-2 border-b border-slate-100">Beton- & Stahlhallen</a>
-            <a href="#konfigurator" @click="mobileOpen = false" class="block font-bold text-slate-800 py-2 border-b border-slate-100">Kalkulator</a>
-            <a href="#ueber-uns" @click="mobileOpen = false" class="block font-bold text-slate-800 py-2 border-b border-slate-100">Über uns</a>
-            <a href="#gewerke" @click="mobileOpen = false" class="block font-bold text-slate-800 py-2 border-b border-slate-100">Gewerke & TZB</a>
-            <a href="#kontakt" @click="mobileOpen = false" class="block font-bold text-slate-800 py-2 border-b border-slate-100">Kontakt</a>
-            <button @click="mobileOpen = false; modalOpen = true" class="w-full bg-swiss-graphite hover:bg-swiss-graphite-hover text-white font-bold py-3 rounded-xl text-center transition-all action-shadow">
-                Halle berechnen
-            </button>
-        </div>
-    </header>
+    <div class="page-curtain" aria-hidden="true"></div>
+    <div id="scroll-progress" class="scroll-progress" aria-hidden="true"></div>
 
     <!-- HERO SECTION -->
-    <section class="relative pt-36 pb-20 lg:pt-48 lg:pb-32 bg-swiss-concrete border-b border-slate-300">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="grid lg:grid-cols-12 gap-12 items-center">
-                
-                <!-- HERO TEXT COLUMN -->
-                <div class="lg:col-span-6 space-y-8 hero-copy">
-                    <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-red-50 border border-red-200 text-swiss-red text-xs font-extrabold uppercase tracking-wider">
-                        <span class="w-2 h-2 rounded-full bg-swiss-red animate-pulse"></span>
-                        <span>Generalunternehmung & Hallenbau</span>
-                    </div>
+    <section id="main-content" class="hero-section relative bg-swiss-dark border-b border-slate-800">
+        <div class="hero-media" aria-hidden="true">
+            <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=2000&auto=format&fit=crop"
+                 alt=""
+                 fetchpriority="high"
+                 onerror="this.style.display='none'">
+        </div>
+        <div class="hero-shade" aria-hidden="true"></div>
+        <div class="hero-inner max-w-7xl mx-auto px-6">
+            <div class="hero-kicker text-white/75 text-sm font-semibold uppercase tracking-[0.18em]">
+                Ascensio Swiss <span class="text-swiss-red">/</span> Hallenbau
+            </div>
 
-                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-slate-900 tracking-tight leading-[1.12]">
-                        Industrieller <br>
-                        <span class="text-swiss-red">Beton- & Stahlhallenbau</span> <br>
-                        nach Schweizer Normen.
-                    </h1>
+            <div class="hero-heading-row grid lg:grid-cols-12 gap-8 lg:gap-12 items-end">
+                <h1 class="hero-title lg:col-span-9 text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-black text-white tracking-tight leading-[1.08]">
+                    <span class="hero-title-line"><span>Hallen für</span></span>
+                    <span class="hero-title-line"><span><span class="text-swiss-red">morgen.</span></span></span>
+                </h1>
+                <p class="hero-description lg:col-span-3 text-base sm:text-lg text-slate-200 leading-relaxed">
+                    Beton- und Stahlhallen für Logistik, Produktion und Gewerbe. Klar geplant und in der Schweiz begleitet.
+                </p>
+            </div>
 
-                    <p class="text-base sm:text-lg text-slate-600 font-normal leading-relaxed max-w-xl">
-                        Wir planen und realisieren Beton- und Stahlhallen für Logistik, Produktion und Gewerbe. Gebäudetechnik und weitere Gewerke ergänzen das Angebot bei Bedarf.
-                    </p>
-
-                    <!-- BUTTON GROUP -->
-                    <div class="flex flex-col sm:flex-row gap-4 pt-2">
-                        <a href="#konfigurator" class="bg-swiss-graphite hover:bg-swiss-graphite-hover text-white font-bold px-8 py-4 rounded-xl shadow-lg transition-all text-center flex items-center justify-center gap-3 action-shadow">
-                            <span>Hallenkonfigurator starten</span>
-                            <i class="fa-solid fa-arrow-right text-xs"></i>
-                        </a>
-                        <a href="#hallenbau" class="bg-transparent border border-slate-400 hover:bg-slate-200 hover:border-slate-500 text-slate-800 font-bold px-8 py-4 rounded-xl transition-all text-center flex items-center justify-center">
-                            Bauweisen entdecken
-                        </a>
-                    </div>
-
-                    <!-- METRICS & KEY FACTS -->
-                    <div class="grid grid-cols-3 gap-6 pt-8 border-t border-slate-300">
-                        <div>
-                            <span class="text-2xl sm:text-3xl font-black text-slate-900 block font-mono">100%</span>
-                            <span class="text-xs text-slate-500 font-bold uppercase mt-1 block">Eigene Ressourcen</span>
-                        </div>
-                        <div>
-                            <span class="text-2xl sm:text-3xl font-black text-slate-900 block font-mono">F90/F120</span>
-                            <span class="text-xs text-slate-500 font-bold uppercase mt-1 block">Feuerwiderstand</span>
-                        </div>
-                        <div>
-                            <span class="text-2xl sm:text-3xl font-black text-swiss-red block font-mono">CH-SIA</span>
-                            <span class="text-xs text-slate-500 font-bold uppercase mt-1 block">Qualitätskontrolle</span>
-                        </div>
-                    </div>
+            <div class="hero-bottom">
+                <div class="hero-actions flex flex-col sm:flex-row gap-8">
+                    <a href="#hallenbau" class="hero-link hero-link-primary">
+                        <span>Hallen entdecken</span>
+                        <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                    </a>
+                    <a href="#kontakt" class="hero-link">
+                        <span>Projekt besprechen</span>
+                        <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                    </a>
                 </div>
 
-                <!-- HERO PHOTO VISUAL -->
-                <div class="lg:col-span-6 relative hero-visual">
-                    <div class="relative rounded-xl overflow-hidden shadow-xl bg-fallback-hall">
-                        <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=1400&auto=format&fit=crop" 
-                             alt="Innenansicht einer Logistikhalle mit Regalsystemen" 
-                             class="w-full h-[420px] sm:h-[500px] object-cover relative z-10"
-                             onerror="this.style.opacity='0.1'">
-                        
-                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent z-20"></div>
-
-                        <div class="absolute bottom-7 left-7 z-30 text-white">
-                            <p class="text-xs font-bold uppercase text-white/75">Tragkonstruktion</p>
-                            <p class="text-lg sm:text-xl font-extrabold">Massivbeton & Stahlträger</p>
-                        </div>
-                    </div>
+                <div class="hero-stats">
+                    <span>Betonbau</span>
+                    <span>Stahlbau</span>
+                    <span>Projektleitung Schweiz</span>
                 </div>
-
             </div>
         </div>
     </section>
 
-    <!-- SECTION 1: INDUSTRIAL HALL TYPES -->
-    <section id="hallenbau" class="py-24 bg-swiss-concrete border-b border-slate-300">
+    <nav class="section-nav" aria-label="Seitenabschnitte">
+        <div class="max-w-7xl mx-auto px-6">
+            <a href="#hallenbau"><span>01</span> Hallen</a>
+            <a href="#ablauf"><span>02</span> Ablauf</a>
+            <a href="#konfigurator"><span>03</span> Konfigurator</a>
+            <a href="#ueber-uns"><span>04</span> Unternehmen</a>
+            <a href="#kontakt"><span>05</span> Kontakt</a>
+        </div>
+    </nav>
+
+    <!-- MAIN OFFER: CONCRETE AND STEEL HALLS -->
+    <section id="hallenbau" class="editorial-section py-24 bg-swiss-concrete border-b border-slate-300">
         <div class="max-w-7xl mx-auto px-6">
             
-            <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
-                <span class="text-swiss-red text-xs font-bold uppercase tracking-widest bg-red-50 px-3.5 py-1.5 rounded-full border border-red-100">
-                    Hauptkompetenz
-                </span>
-                <h2 class="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
-                    Moderne Systemhallen nach Mass
-                </h2>
-                <p class="text-slate-600 text-base leading-relaxed">
-                    Wir realisieren tragfähige Hallenbauten für Industrie und Gewerbe. Dank vorgefertigter Elemente erreichen wir minimale Bauzeiten bei höchster Präzision.
+            <div class="editorial-heading max-w-7xl mx-auto mb-14">
+                <div>
+                    <span class="section-eyebrow">01 / Unsere Hauptkompetenz</span>
+                    <h2 class="text-4xl sm:text-5xl lg:text-6xl font-black text-slate-900 tracking-tight">
+                        Gebaut für den<br><span class="text-swiss-red">Betrieb von morgen.</span>
+                    </h2>
+                </div>
+                <p class="max-w-lg text-slate-600 text-base sm:text-lg leading-relaxed">
+                    Wir konzentrieren uns auf Beton- und Stahlhallen für Logistik, Produktion und Gewerbe. Die passende Bauweise richtet sich nach Nutzung, Standort und Projekt.
                 </p>
             </div>
 
             <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-swiss-panel rounded-3xl p-8 border border-slate-300 hover:border-slate-400 hover:shadow-lg transition-all duration-300 flex flex-col justify-between group">
-                    <div class="space-y-6">
+                <div class="hall-card bg-swiss-panel rounded-3xl p-8 border border-slate-300 hover:border-slate-400 hover:shadow-lg transition-all duration-300 flex flex-col justify-between group">
+                    <div class="hall-card-content space-y-6">
                         <div class="w-14 h-14 rounded-2xl bg-slate-100 border border-slate-300 text-swiss-graphite flex items-center justify-center text-2xl font-bold transition-colors">
                             <i class="fa-solid fa-cubes-stacked"></i>
                         </div>
                         <h3 class="text-2xl font-black text-slate-900">Beton-Skelettbau</h3>
                         <p class="text-slate-600 text-sm leading-relaxed">
-                            Bestehend aus vorgefertigten Betonstützen und Bindern. Bietet extrem hohe Feuerwiderstandsklassen (F90) und optimale Schalldämmung für schwere Produktionsbetriebe.
+                            Vorgefertigte Betonstützen und Binder schaffen eine robuste Grundlage für Produktions- und Gewerbebauten.
                         </p>
-                        <ul class="space-y-2.5 text-xs font-semibold text-slate-700 pt-2 border-t border-slate-200">
-                            <li class="flex items-center gap-2.5"><i class="fa-solid fa-check text-swiss-red"></i> Hoher Brandschutz F90/F120</li>
-                            <li class="flex items-center gap-2.5"><i class="fa-solid fa-check text-swiss-red"></i> Ausgelegt für schwere Kranbahnen</li>
-                        </ul>
                     </div>
-                    <div class="mt-8 rounded-xl overflow-hidden border border-slate-200 h-48 bg-slate-200">
-                        <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=800&auto=format&fit=crop" alt="Betonskelettbau" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="hall-card-media mt-8 rounded-xl overflow-hidden border border-slate-200 h-48 bg-slate-200">
+                        <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=800&auto=format&fit=crop" alt="Betonskelettbau" class="w-full h-full object-cover">
                     </div>
                 </div>
 
-                <div class="bg-swiss-panel rounded-3xl p-8 border border-slate-300 hover:border-slate-400 hover:shadow-lg transition-all duration-300 flex flex-col justify-between group">
-                    <div class="space-y-6">
+                <div class="hall-card bg-swiss-panel rounded-3xl p-8 border border-slate-300 hover:border-slate-400 hover:shadow-lg transition-all duration-300 flex flex-col justify-between group">
+                    <div class="hall-card-content space-y-6">
                         <div class="w-14 h-14 rounded-2xl bg-slate-100 border border-slate-300 text-swiss-graphite flex items-center justify-center text-2xl font-bold transition-colors">
                             <i class="fa-solid fa-warehouse"></i>
                         </div>
                         <h3 class="text-2xl font-black text-slate-900">Logistikhallen</h3>
                         <p class="text-slate-600 text-sm leading-relaxed">
-                            Große freie Spannweiten ohne Zwischenstützen für maximale Hochregalnutzung. Inklusive ebenheitsoptimiertem Industrieboden und Überladebrücken.
+                            Durchdachte Flächen für Warenfluss, Lagerung und Umschlag – passend zu den betrieblichen Abläufen.
                         </p>
-                        <ul class="space-y-2.5 text-xs font-semibold text-slate-700 pt-2 border-t border-slate-200">
-                            <li class="flex items-center gap-2.5"><i class="fa-solid fa-check text-swiss-red"></i> Spannweiten bis zu 45 Meter</li>
-                            <li class="flex items-center gap-2.5"><i class="fa-solid fa-check text-swiss-red"></i> Fugenarme Industrieböden</li>
-                        </ul>
                     </div>
-                    <div class="mt-8 rounded-xl overflow-hidden border border-slate-200 h-48 bg-slate-200">
-                        <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=800&auto=format&fit=crop" alt="Logistikhalle" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="hall-card-media mt-8 rounded-xl overflow-hidden border border-slate-200 h-48 bg-slate-200">
+                        <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=800&auto=format&fit=crop" alt="Logistikhalle" class="w-full h-full object-cover">
                     </div>
                 </div>
 
-                <div class="bg-swiss-panel rounded-3xl p-8 border border-slate-300 hover:border-slate-400 hover:shadow-lg transition-all duration-300 flex flex-col justify-between group">
-                    <div class="space-y-6">
+                <div class="hall-card bg-swiss-panel rounded-3xl p-8 border border-slate-300 hover:border-slate-400 hover:shadow-lg transition-all duration-300 flex flex-col justify-between group">
+                    <div class="hall-card-content space-y-6">
                         <div class="w-14 h-14 rounded-2xl bg-slate-100 border border-slate-300 text-swiss-graphite flex items-center justify-center text-2xl font-bold transition-colors">
                             <i class="fa-solid fa-building-user"></i>
                         </div>
                         <h3 class="text-2xl font-black text-slate-900">Gewerbe & Büro</h3>
                         <p class="text-slate-600 text-sm leading-relaxed">
-                            Nutzungsoptimierte Kombination aus Produktionshalle und repräsentativem Bürotrakt. Moderner Wärme- und Schallschutz nach SIA 181.
+                            Produktions- und Arbeitsbereiche werden in einem stimmigen Gebäudekonzept zusammengeführt.
                         </p>
-                        <ul class="space-y-2.5 text-xs font-semibold text-slate-700 pt-2 border-t border-slate-200">
-                            <li class="flex items-center gap-2.5"><i class="fa-solid fa-check text-swiss-red"></i> Hochwertige Glas- & Paneelfassaden</li>
-                            <li class="flex items-center gap-2.5"><i class="fa-solid fa-check text-swiss-red"></i> Turn-key Innenausbau</li>
-                        </ul>
                     </div>
-                    <div class="mt-8 rounded-xl overflow-hidden border border-slate-200 h-48 bg-slate-200">
-                        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=800&auto=format&fit=crop" alt="Gewerbekomplex" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="hall-card-media mt-8 rounded-xl overflow-hidden border border-slate-200 h-48 bg-slate-200">
+                        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=800&auto=format&fit=crop" alt="Gewerbekomplex" class="w-full h-full object-cover">
                     </div>
                 </div>
             </div>
 
+            <div class="hall-section-cta">
+                <p>Sie planen ein konkretes Vorhaben?</p>
+                <a href="#konfigurator" class="text-link">Hallenprojekt konfigurieren <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
         </div>
     </section>
 
-    <!-- SECTION 2: HALL CONFIGURATOR -->
-    <section id="konfigurator" class="py-20 bg-swiss-mist border-b border-slate-300 grid-architect" x-data="hallConfigurator()">
+    <!-- PROJECT PROCESS -->
+    <section id="ablauf" class="py-24 bg-swiss-dark text-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="editorial-heading editorial-heading-dark mb-14">
+                <div>
+                    <span class="section-eyebrow">02 / Zusammenarbeit</span>
+                    <h2 class="text-4xl sm:text-5xl font-black tracking-tight">Vom Bedarf zur Halle.</h2>
+                </div>
+                <p class="max-w-lg text-slate-300 text-base sm:text-lg leading-relaxed">
+                    Ein klarer Ablauf hält Entscheidungen, Planung und Umsetzung zusammen.
+                </p>
+            </div>
+
+            <div class="process-list">
+                <article class="process-step">
+                    <span class="process-number">01</span>
+                    <div>
+                        <h3>Bedarf verstehen</h3>
+                        <p>Nutzung, Standort und Anforderungen an die Halle gemeinsam klären.</p>
+                    </div>
+                </article>
+                <article class="process-step">
+                    <span class="process-number">02</span>
+                    <div>
+                        <h3>Lösung planen</h3>
+                        <p>Bauweise und Projektumfang passend zum Vorhaben abstimmen.</p>
+                    </div>
+                </article>
+                <article class="process-step">
+                    <span class="process-number">03</span>
+                    <div>
+                        <h3>Umsetzung koordinieren</h3>
+                        <p>Projektleitung und Ausführung auf die vereinbarten Ziele ausrichten.</p>
+                    </div>
+                </article>
+                <article class="process-step">
+                    <span class="process-number">04</span>
+                    <div>
+                        <h3>Projekt übergeben</h3>
+                        <p>Die Ausführung abschliessen und die nächsten Schritte gemeinsam prüfen.</p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- HALL CONFIGURATOR -->
+    <section id="konfigurator" class="py-20 bg-swiss-mist border-b border-slate-300" x-data="hallConfigurator()">
         <div class="max-w-4xl mx-auto px-6">
             <div class="bg-swiss-panel rounded-3xl border border-slate-300 shadow-lg overflow-hidden">
                 
                 <div class="bg-slate-900 text-white p-8 text-center">
-                    <span class="text-swiss-red font-bold text-xs uppercase tracking-widest block mb-1">Interaktive Vorplanung</span>
+                    <span class="section-eyebrow block mb-1">03 / Interaktive Vorplanung</span>
                     <h2 class="text-2xl sm:text-3xl font-black">Hallen-Konfigurator</h2>
                     <p class="text-slate-400 text-xs sm:text-sm mt-1">Stellen Sie die Eckdaten Ihres Hallenprojekts für eine erste Anfrage zusammen</p>
                 </div>
@@ -318,150 +299,96 @@
         </div>
     </section>
 
-    <!-- SECTION 3: 'ÜBER UNS' -->
+    <!-- COMPANY -->
     <section id="ueber-uns" class="py-24 bg-swiss-concrete border-b border-slate-300">
         <div class="max-w-7xl mx-auto px-6">
             <div class="grid lg:grid-cols-12 gap-12 items-center">
                 <div class="lg:col-span-7 space-y-6">
-                    <span class="text-xs font-bold text-swiss-red uppercase tracking-widest bg-red-50 px-3 py-1 rounded-full border border-red-100">
-                        Unternehmensentwicklung
-                    </span>
-                    <h2 class="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
-                        Neues Kapitel. Klarer Fokus auf Hallenbau.
+                    <span class="section-eyebrow">04 / Ascensio Swiss</span>
+                    <h2 class="text-4xl sm:text-5xl font-black text-slate-900 tracking-tight">
+                        Neuer Impuls.<br>Klarer Fokus.
                     </h2>
                     <div class="space-y-4 text-slate-600 text-base leading-relaxed">
                         <p>
-                            <strong class="text-slate-900 font-bold">Ascensio Swiss richtet sich neu aus.</strong> Mit dem Eintritt eines neuen Geschäftsführers und Teilhabers bündeln wir unsere Ausrichtung auf den <strong class="text-slate-900 font-bold">Beton- und Stahlhallenbau</strong>. Künftig stehen Hallen für Logistik, Produktion und Gewerbe im Mittelpunkt unseres Angebots.
+                            Mit dem Eintritt eines neuen Geschäftsführers und Teilhabers richtet Ascensio Swiss das Angebot neu aus. Im Zentrum stehen künftig <strong class="text-slate-900 font-bold">Beton- und Stahlhallen</strong> für Logistik, Produktion und Gewerbe.
                         </p>
                         <p>
-                            Unsere Projektleitung in der Schweiz arbeitet mit eigenen Ausführungsteams und einer eigenen Infrastruktur. Sanitär, Heizung, Elektro und weitere Gewerke ergänzen den Hallenbau, wenn das Projekt es erfordert.
+                            Unsere Projektleitung in der Schweiz arbeitet mit eigenen Ausführungsteams und eigener Infrastruktur. Sanitär, Heizung, Elektro und weitere Gewerke bleiben eine Ergänzung, wenn sie zum Hallenprojekt passen.
                         </p>
                     </div>
 
-                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-4">
-                        <div class="bg-slate-200 p-4 rounded-2xl border border-slate-300">
-                            <i class="fa-solid fa-truck-monster text-swiss-red text-xl mb-2"></i>
-                            <h3 class="font-bold text-slate-900 text-xs">Eigener Fuhrpark</h3>
-                            <p class="text-[11px] text-slate-500 mt-1">Unabhängig & mobil</p>
-                        </div>
-                        <div class="bg-slate-200 p-4 rounded-2xl border border-slate-300">
-                            <i class="fa-solid fa-screwdriver-wrench text-swiss-red text-xl mb-2"></i>
-                            <h3 class="font-bold text-slate-900 text-xs">Hilti & Milwaukee</h3>
-                            <p class="text-[11px] text-slate-500 mt-1">100% Profi-Equipment</p>
-                        </div>
-                        <div class="bg-slate-200 p-4 rounded-2xl border border-slate-300 col-span-2 sm:col-span-1">
-                            <i class="fa-solid fa-user-check text-swiss-red text-xl mb-2"></i>
-                            <h3 class="font-bold text-slate-900 text-xs">Feste Teams</h3>
-                            <p class="text-[11px] text-slate-500 mt-1">Eingespielte Fachkräfte</p>
-                        </div>
+                    <div class="about-facts">
+                        <span>Projektleitung in der Schweiz</span>
+                        <span>Eigene Ausführungsteams</span>
+                        <span>Eigene Infrastruktur</span>
                     </div>
                 </div>
 
                 <div class="lg:col-span-5">
-                    <div class="bg-swiss-panel rounded-3xl p-8 border border-slate-300 space-y-6">
-                        <div class="flex justify-between items-center border-b border-slate-200 pb-4">
-                            <div>
-                                <span class="text-xs font-mono font-bold text-slate-400 uppercase">MANAGEMENT & QUALITÄT</span>
-                                <h3 class="text-lg font-bold text-slate-900">Persönliche Projektleitung</h3>
-                            </div>
-                            <span class="w-3 h-3 rounded-full bg-swiss-red"></span>
-                        </div>
-
-                        <div class="rounded-2xl overflow-hidden h-52 border border-slate-200 relative bg-slate-200">
-                            <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=800&auto=format&fit=crop" alt="Projektleitung" class="w-full h-full object-cover">
-                            <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent"></div>
-                            <span class="absolute bottom-3 left-4 text-xs font-bold text-white bg-slate-900/80 px-3 py-1 rounded-md border border-slate-700">
-                                Schweizer Qualitätsmanagement
-                            </span>
-                        </div>
-
-                        <blockquote class="text-xs text-slate-600 italic leading-relaxed border-l-2 border-swiss-red pl-4">
-                            "Durch die klare Bündelung unserer Ressourcen auf den Hallenbau garantieren wir absolute Termin- und Kostensicherheit für Ihr Bauvorhaben."
-                        </blockquote>
+                    <div class="about-focus">
+                        <span class="section-eyebrow">Unser Schwerpunkt</span>
+                        <h3>Beton.<br>Stahl.<br><span>Hallenbau.</span></h3>
+                        <p>Ein klarer Fokus für die nächste Entwicklungsphase von Ascensio Swiss.</p>
+                        <a href="#kontakt" class="text-link">Lernen Sie uns kennen <i class="fa-solid fa-arrow-right"></i></a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- SECTION 4: TZB & CRAFTS TABBED -->
-    <section id="gewerke" class="py-20 bg-swiss-mist border-b border-slate-300">
-        <div class="max-w-5xl mx-auto px-6">
-            <div class="mb-12 text-center space-y-3">
-                <span class="text-xs font-mono font-bold text-slate-400 uppercase tracking-widest">Integrierte Haustechnik</span>
-                <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900">Weitere Gewerke als Ergänzung</h2>
-                <p class="text-slate-600 text-xs sm:text-sm max-w-xl mx-auto">
-                    Sanitär, Heizung, Lüftung, Elektro und Trockenbau ergänzen unsere Hallenbauprojekte. Bei passenden Kapazitäten unterstützen wir auch ausgewählte Einzelprojekte.
+    <!-- ADDITIONAL SERVICES -->
+    <section id="gewerke" class="secondary-services py-20 bg-swiss-mist border-b border-slate-300">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="secondary-services-copy">
+                <span class="section-eyebrow">Ergänzend zum Hallenbau</span>
+                <h2 class="text-3xl sm:text-4xl font-black text-slate-900">Weitere Gewerke.<br><span>Wenn das Projekt es braucht.</span></h2>
+                <p class="text-slate-600 leading-relaxed">
+                    Sanitär, Heizung, Lüftung, Elektro und Trockenbau unterstützen passende Hallenprojekte. Der Umfang wird projektbezogen abgestimmt.
                 </p>
             </div>
-
-            <div class="bg-swiss-panel rounded-3xl border border-slate-300 p-6 sm:p-8">
-                <div class="flex flex-wrap gap-2 border-b border-slate-100 pb-6 mb-6">
-                    <button @click="currentTab = 'sanitaer'" :class="currentTab === 'sanitaer' ? 'bg-swiss-graphite text-white font-bold' : 'bg-slate-100 text-slate-700 hover:bg-slate-200'" class="px-5 py-2.5 rounded-xl text-xs sm:text-sm transition-all">
-                        <i class="fa-solid fa-faucet-drip mr-2"></i> Sanitär & Wasser
-                    </button>
-                    <button @click="currentTab = 'hvac'" :class="currentTab === 'hvac' ? 'bg-swiss-graphite text-white font-bold' : 'bg-slate-100 text-slate-700 hover:bg-slate-200'" class="px-5 py-2.5 rounded-xl text-xs sm:text-sm transition-all">
-                        <i class="fa-solid fa-temperature-arrow-up mr-2"></i> Heizung & Klima (HVAC)
-                    </button>
-                    <button @click="currentTab = 'elektro'" :class="currentTab === 'elektro' ? 'bg-swiss-graphite text-white font-bold' : 'bg-slate-100 text-slate-700 hover:bg-slate-200'" class="px-5 py-2.5 rounded-xl text-xs sm:text-sm transition-all">
-                        <i class="fa-solid fa-bolt mr-2"></i> Elektrotechnik
-                    </button>
-                    <button @click="currentTab = 'trockenbau'" :class="currentTab === 'trockenbau' ? 'bg-swiss-graphite text-white font-bold' : 'bg-slate-100 text-slate-700 hover:bg-slate-200'" class="px-5 py-2.5 rounded-xl text-xs sm:text-sm transition-all">
-                        <i class="fa-solid fa-paint-roller mr-2"></i> Trockenbau
-                    </button>
-                </div>
-
-                <div x-show="currentTab === 'sanitaer'" x-transition.opacity.duration.200ms class="space-y-4">
-                    <h3 class="text-lg font-bold text-slate-900">Sanitär- & Wasserinstallationen</h3>
-                    <p class="text-sm text-slate-600 leading-relaxed">
-                        Komplette sanitäre Erschließung von Gewerbe- und Industriehallen. Wir installieren Fettabscheider, Großraum-Sanitäranlagen für Mitarbeiter sowie hochbelastbare industrielle Brauchwassersysteme.
-                    </p>
-                </div>
-
-                <div x-show="currentTab === 'hvac'" x-transition.opacity.duration.200ms class="space-y-4" style="display:none;">
-                    <h3 class="text-lg font-bold text-slate-900">Heizung, Lüftung & Klima (HVAC)</h3>
-                    <p class="text-sm text-slate-600 leading-relaxed">
-                        Effiziente Dunkelstrahlersysteme für hohe Hallendecken, industrielle Wärmepumpen und kontinuierliche Entlüftungsanlagen nach aktuellen Schweizer Energieeffizienzstandards.
-                    </p>
-                </div>
-
-                <div x-show="currentTab === 'elektro'" x-transition.opacity.duration.200ms class="space-y-4" style="display:none;">
-                    <h3 class="text-lg font-bold text-slate-900">Elektrotechnik & Starkstrom</h3>
-                    <p class="text-sm text-slate-600 leading-relaxed">
-                        Verlegung von Starkstromnetzen für Fertigungsmotoren, Trafostationen, intelligente LED-Hallenbeleuchtung und RWA-Steuerungen.
-                    </p>
-                </div>
-
-                <div x-show="currentTab === 'trockenbau'" x-transition.opacity.duration.200ms class="space-y-4" style="display:none;">
-                    <h3 class="text-lg font-bold text-slate-900">Trockenbau & Systemtrennwände</h3>
-                    <p class="text-sm text-slate-600 leading-relaxed">
-                        Hochwertige Modul-Trennwände für Bürokomplexe, Akustikdecken zur Lärmminderung und abriebfeste Bodenbeschichtungen.
-                    </p>
-                </div>
-            </div>
+            <ul class="service-list">
+                <li><i class="fa-solid fa-faucet-drip"></i> Sanitär & Wasser</li>
+                <li><i class="fa-solid fa-temperature-half"></i> Heizung & Klima</li>
+                <li><i class="fa-solid fa-bolt"></i> Elektrotechnik</li>
+                <li><i class="fa-solid fa-paint-roller"></i> Trockenbau</li>
+            </ul>
         </div>
     </section>
 
-    <!-- SECTION 5: FOOTER -->
+    <!-- CONTACT -->
     <footer id="kontakt" class="bg-slate-900 text-slate-400 text-xs py-16 border-t border-slate-800">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-10 pb-12 border-b border-slate-800">
+            <div class="footer-lead">
+                <div>
+                    <span class="section-eyebrow">05 / Kontakt</span>
+                    <h2 class="text-4xl sm:text-5xl font-black text-white tracking-tight">Planen Sie eine Halle?</h2>
+                    <p class="mt-4 max-w-xl text-slate-400 text-base leading-relaxed">
+                        Erzählen Sie uns von Ihrem Vorhaben. Gemeinsam klären wir, welche nächsten Schritte sinnvoll sind.
+                    </p>
+                </div>
+                <div class="footer-contact-links">
+                    <a href="tel:+41775205626"><i class="fa-solid fa-phone"></i> +41 77 520 5626</a>
+                    <a href="mailto:info@ascensioswiss.ch"><i class="fa-solid fa-envelope"></i> info@ascensioswiss.ch</a>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 py-8 border-t border-slate-800">
                 <div class="space-y-4">
-                    <a href="#">
+                    <a href="#main-content" aria-label="Zurück zum Seitenanfang">
                         <img src="assets/logo.svg" alt="Ascensio Swiss Logo" class="logo-svg-footer">
                     </a>
                     <p class="text-slate-400 leading-relaxed">
-                        Generalunternehmung für Industriehallen in Beton- und Stahlbauweise sowie Haustechnik.
+                        Generalunternehmung mit Fokus auf Beton- und Stahlhallen.
                     </p>
                 </div>
 
                 <div class="space-y-3">
-                    <h4 class="text-white font-bold uppercase tracking-wider text-xs">Navigation</h4>
+                    <h3 class="text-white font-bold uppercase tracking-wider text-xs">Entdecken</h3>
                     <ul class="space-y-2 font-medium">
                         <li><a href="#hallenbau" class="hover:text-white transition-colors">Beton- & Stahlhallen</a></li>
                         <li><a href="#konfigurator" class="hover:text-white transition-colors">Hallen-Konfigurator</a></li>
+                        <li><a href="#ablauf" class="hover:text-white transition-colors">Projektablauf</a></li>
                         <li><a href="#ueber-uns" class="hover:text-white transition-colors">Über uns</a></li>
-                        <li><a href="#gewerke" class="hover:text-white transition-colors">Gewerke & TZB</a></li>
                     </ul>
                 </div>
 
@@ -473,21 +400,13 @@
                         <p>Schweiz</p>
                     </div>
                 </div>
-
-                <div class="space-y-3">
-                    <h4 class="text-white font-bold uppercase tracking-wider text-xs">Kontakt</h4>
-                    <div class="space-y-2 text-slate-300 font-medium">
-                        <p><i class="fa-solid fa-phone text-swiss-red mr-2"></i> <a href="tel:+41775205626" class="hover:text-white font-bold text-sm">+41 77 520 5626</a></p>
-                        <p><i class="fa-solid fa-envelope text-swiss-red mr-2"></i> <a href="mailto:info@ascensioswiss.ch" class="hover:text-white">info@ascensioswiss.ch</a></p>
-                    </div>
-                </div>
             </div>
 
             <div class="pt-8 flex flex-col sm:flex-row justify-between items-center text-slate-500 text-[11px] gap-4">
                 <p>© 2026 Ascensio Swiss. Alle Rechte vorbehalten.</p>
                 <div class="flex gap-6">
-                    <a href="#" class="hover:text-white">Impressum</a>
-                    <a href="#" class="hover:text-white">Datenschutz</a>
+                    <span>Impressum</span>
+                    <span>Datenschutz</span>
                 </div>
             </div>
         </div>
@@ -502,25 +421,26 @@
                     <h3 class="text-lg font-bold text-slate-900">Unverbindliche Hallenanfrage</h3>
                     <button @click="modalOpen = false" class="text-slate-400 hover:text-slate-700"><i class="fa-solid fa-xmark text-xl"></i></button>
                 </div>
-                <form @submit.prevent="modalOpen = false; alert('Vielen Dank! Ihre Anfrage wurde übermittelt.');" class="space-y-4">
+                <form @submit.prevent="submitInquiry($event)" class="space-y-4">
                     <div>
                         <label class="block text-xs font-bold text-slate-700 mb-1">Name / Ansprechpartner *</label>
-                        <input type="text" required class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm outline-none focus:border-swiss-red">
+                        <input type="text" name="name" required class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm outline-none focus:border-swiss-red">
                     </div>
                     <div>
                         <label class="block text-xs font-bold text-slate-700 mb-1">E-Mail *</label>
-                        <input type="email" required class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm outline-none focus:border-swiss-red">
+                        <input type="email" name="email" required class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm outline-none focus:border-swiss-red">
                     </div>
                     <div>
                         <label class="block text-xs font-bold text-slate-700 mb-1">Telefon *</label>
-                        <input type="tel" required class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm outline-none focus:border-swiss-red">
+                        <input type="tel" name="phone" required class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm outline-none focus:border-swiss-red">
                     </div>
                     <div>
                         <label class="block text-xs font-bold text-slate-700 mb-1">Projektbeschreibung</label>
-                        <textarea rows="3" class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm outline-none focus:border-swiss-red" placeholder="Fläche in m², Standort, Baubeginn..."></textarea>
+                        <textarea name="project" rows="3" class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm outline-none focus:border-swiss-red" placeholder="Fläche in m², Standort, Baubeginn..."></textarea>
                     </div>
+                    <p class="text-xs text-slate-500">Beim Absenden öffnet sich Ihr E-Mail-Programm mit den Angaben.</p>
                     <button type="submit" class="w-full bg-swiss-graphite hover:bg-swiss-graphite-hover text-white font-bold py-3.5 rounded-xl text-sm transition-all action-shadow">
-                        Anfrage absenden
+                        Anfrage per E-Mail vorbereiten
                     </button>
                 </form>
             </div>
