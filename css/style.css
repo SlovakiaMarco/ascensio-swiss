@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: #e5e8e7;
+    color: #0d1117;
+    overflow-x: hidden;
+}
+
+/* Jemná švajčiarska architektonická mriežka */
+.grid-architect {
+    background-size: 30px 30px;
+    background-image:
+        linear-gradient(to right, rgba(15, 23, 42, 0.03) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(15, 23, 42, 0.03) 1px, transparent 1px);
+}
+
+/* Červené tlačidlové vyžarovanie / tiene */
+.action-shadow {
+    box-shadow: 0 10px 26px -8px rgba(38, 50, 56, 0.24);
+}
+
+.action-shadow:hover {
+    box-shadow: 0 12px 28px -8px rgba(38, 50, 56, 0.34);
+}
+
+/* Záložné pozadie pri výpadku externých obrázkov */
+.bg-fallback-hall {
+    background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+}
+
+/* Ošetrenie zobrazenia SVG loga */
+.logo-svg-header {
+    height: 48px;
+    width: auto;
+    display: block;
+}
+
+.logo-svg-footer {
+    height: 56px;
+    width: auto;
+    display: block;
+}
+
+#hallenbau .group {
+    transition: transform 300ms ease, border-color 300ms ease, box-shadow 300ms ease;
+}
+
+#hallenbau .group:hover {
+    transform: translateY(-6px);
+}
+
+.hero-visual img {
+    will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    #hallenbau .group:hover {
+        transform: none;
+    }
+}
