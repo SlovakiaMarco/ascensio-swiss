@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt | Ascensio Swiss</title>
+    <meta name="description" content="Kontaktieren Sie Ascensio Swiss zu Ihrem Hallen-, Gewerbe- oder Bauprojekt.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.umd.js"></script>
+    <script src="js/main.js" defer></script>
+</head>
+<body class="antialiased detail-page">
+    <header class="detail-topbar">
+        <a href="index.html" class="detail-back"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Startseite</a>
+        <a href="index.html" class="detail-brand"><img src="assets/logo.svg" alt="Ascensio Swiss – Startseite"></a>
+        <nav class="detail-nav" aria-label="Hauptnavigation">
+            <a href="projekte.html">Projekte</a><a href="ueber-uns.html">Über uns</a><a href="kontakt.html" aria-current="page">Kontakt</a>
+        </nav>
+    </header>
+    <main>
+        <section class="page-heading contact-page-heading">
+            <span class="section-eyebrow">Ascensio Swiss / Kontakt</span>
+            <h1>Was planen Sie?</h1>
+            <p>Ob neue Halle, Gewerbegebäude oder ergänzende Bauleistung – senden Sie uns die wichtigsten Eckdaten. Wir melden uns für ein erstes Gespräch.</p>
+        </section>
+        <section class="contact-layout">
+            <div class="contact-details">
+                <span class="section-eyebrow">Direkter Kontakt</span>
+                <h2>Wir sind gerne für Sie da.</h2>
+                <a href="tel:+41000000000"><i class="fa-solid fa-phone" aria-hidden="true"></i><span><small>Telefon</small>+41 00 000 0000</span></a>
+                <a href="mailto:info@ascensioswiss.ch"><i class="fa-solid fa-envelope" aria-hidden="true"></i><span><small>E-Mail</small>info@ascensioswiss.ch</span></a>
+                <div class="contact-address"><i class="fa-solid fa-location-dot" aria-hidden="true"></i><span><small>Hauptsitz</small>Ascensio Swiss<br>8132 Egg b. Zürich<br>Schweiz</span></div>
+                <div class="contact-note">Telefon und Kontaktdaten sind Platzhalter und müssen vor Veröffentlichung bestätigt werden.</div>
+            </div>
+            <form class="contact-form" data-email-form>
+                <span class="section-eyebrow">Projektanfrage</span>
+                <label>Name / Unternehmen<input type="text" name="name" autocomplete="name" required></label>
+                <label>E-Mail<input type="email" name="email" autocomplete="email" required></label>
+                <label>Telefon<input type="tel" name="phone" autocomplete="tel"></label>
+                <label>Worum geht es?<select name="type"><option>Beton- oder Stahlhalle</option><option>Gewerbe- und Bürogebäude</option><option>Ergänzende Bauleistung</option><option>Allgemeine Anfrage</option></select></label>
+                <label>Nachricht<textarea name="message" rows="5" placeholder="Standort, Flächenbedarf, Nutzung und Zeitrahmen …" required></textarea></label>
+                <p>Beim Absenden öffnet sich Ihr E-Mail-Programm mit den Angaben.</p>
+                <button type="submit" class="detail-button">Anfrage vorbereiten <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button>
+            </form>
+        </section>
+    </main>
+    <footer class="detail-footer"><a href="index.html"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Zur Startseite</a><span><a href="projekte.html">Projekte</a> · <a href="ueber-uns.html">Über uns</a> · Ascensio Swiss</span></footer>
+</body>
+</html>
