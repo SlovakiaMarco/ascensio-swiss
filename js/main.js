@@ -44,6 +44,22 @@ document.addEventListener('alpine:init', () => {
 });
 
 document.addEventListener('DOMContentLoaded', async () => {
+    const sectionNavigation = document.querySelector('.section-nav');
+    const homepageHero = document.querySelector('.hero-section');
+
+    if (sectionNavigation && homepageHero) {
+        const updateNavigationAppearance = () => {
+            sectionNavigation.classList.toggle(
+                'is-over-hero',
+                homepageHero.getBoundingClientRect().bottom <= sectionNavigation.offsetHeight
+            );
+        };
+
+        updateNavigationAppearance();
+        window.addEventListener('scroll', updateNavigationAppearance, { passive: true });
+        window.addEventListener('resize', updateNavigationAppearance);
+    }
+
     const projectNumber = new URLSearchParams(window.location.search).get('projekt');
     const projectNumberLabel = document.querySelector('[data-project-number]');
     const projectTitle = document.querySelector('[data-project-title]');
@@ -90,6 +106,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             wheelMultiplier: 0.85,
             touchMultiplier: 1
         });
+        const getScrollOffset = () => sectionNavigation ? -sectionNavigation.offsetHeight - 16 : -24;
 
         const animateScroll = (time) => {
             smoothScroll.raf(time);
@@ -116,14 +133,14 @@ document.addEventListener('DOMContentLoaded', async () => {
 
             event.preventDefault();
             history.pushState(null, '', link.getAttribute('href'));
-            smoothScroll.scrollTo(target, { offset: -24, duration: 1.15 });
+            smoothScroll.scrollTo(target, { offset: getScrollOffset(), duration: 1.15 });
         });
 
         window.addEventListener('popstate', () => {
             const target = window.location.hash && document.querySelector(window.location.hash);
 
             if (target) {
-                smoothScroll.scrollTo(target, { offset: -24, duration: 1.15 });
+                smoothScroll.scrollTo(target, { offset: getScrollOffset(), duration: 1.15 });
             }
         });
     }
@@ -135,7 +152,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     await document.fonts.ready;
     gsap.registerPlugin(ScrollTrigger);
 
-    const homepageHero = document.querySelector('.hero-section');
     const detailHero = document.querySelector('.detail-hero');
 
     if (homepageHero) {

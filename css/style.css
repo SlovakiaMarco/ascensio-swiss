@@ -48,6 +48,11 @@ footer[id] {
     scroll-margin-top: 1.5rem;
 }
 
+.section-nav ~ section[id],
+.section-nav ~ footer[id] {
+    scroll-margin-top: 7rem;
+}
+
 body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     background-color: #e5e8e7;
@@ -247,43 +252,129 @@ body {
 }
 
 .section-nav {
-    border-bottom: 1px solid #d5dad9;
-    background: #f0f2f1;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 20;
+    border-bottom: 1px solid transparent;
+    background: transparent;
+    transition: background-color 240ms ease, border-color 240ms ease, box-shadow 240ms ease, backdrop-filter 240ms ease;
+}
+
+.section-nav.is-over-hero {
+    border-bottom-color: rgba(255, 255, 255, 0.14);
+    background: rgba(13, 17, 23, 0.88);
+    box-shadow: 0 8px 24px -24px rgba(13, 17, 23, 0.6);
+    backdrop-filter: blur(16px);
+}
+
+.section-nav:not(.is-over-hero) .section-nav-links a {
+    color: rgba(255, 255, 255, 0.92);
+}
+
+.section-nav:not(.is-over-hero) .section-nav-links a:hover,
+.section-nav:not(.is-over-hero) .section-nav-links a:focus-visible {
+    color: #ff777d;
+}
+
+.section-nav:not(.is-over-hero) .section-nav-cta {
+    border-color: rgba(255, 255, 255, 0.72);
+    background: rgba(13, 17, 23, 0.38);
 }
 
 .section-nav > div {
-    display: flex;
-    min-height: 4.25rem;
+    display: grid;
+    min-height: 5rem;
+    grid-template-columns: auto minmax(0, 1fr) auto;
     align-items: center;
-    gap: clamp(1.25rem, 5vw, 4.5rem);
-    overflow-x: auto;
+    gap: clamp(1rem, 2.5vw, 2.5rem);
+}
+
+.section-nav-brand {
+    display: inline-flex;
+    align-items: center;
+    color: #172126;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.section-nav-brand img {
+    display: block;
+    width: 2.5rem;
+    height: 3.1rem;
+    object-fit: contain;
+}
+
+.section-nav-links {
+    display: flex;
+    min-width: 0;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(0.65rem, 1.8vw, 1.7rem);
 }
 
 .section-nav a {
     display: inline-flex;
     flex: 0 0 auto;
     align-items: baseline;
-    gap: 0.6rem;
-    color: #263238;
-    font-size: 0.8rem;
+    gap: 0.45rem;
+    color: #39464d;
+    font-size: 0.73rem;
     font-weight: 700;
-    transition: color 200ms ease;
+    text-decoration: none;
+    transition: color 200ms ease, background-color 200ms ease, border-color 200ms ease;
 }
 
-.section-nav a:hover {
+.section-nav-links a:hover,
+.section-nav-links a:focus-visible {
     color: #d9232a;
 }
 
-.section-nav a[aria-current="page"] {
+.section-nav-links a[aria-current="page"] {
     color: #d9232a;
 }
 
-.section-nav a span,
+.section-nav-links a span,
 .section-eyebrow {
     color: #d9232a;
     font: 700 0.7rem/1.2 'JetBrains Mono', monospace;
     letter-spacing: 0.12em;
     text-transform: uppercase;
+}
+
+.section-nav-cta {
+    min-height: 2.75rem;
+    align-items: center !important;
+    gap: 0.65rem !important;
+    padding: 0 1rem;
+    border: 1px solid #263238;
+    background: #263238;
+    color: #fff !important;
+    font-size: 0.72rem !important;
+    font-weight: 800 !important;
+    white-space: nowrap;
+}
+
+.section-nav-cta:hover,
+.section-nav-cta:focus-visible {
+    border-color: #d9232a;
+    background: #d9232a;
+}
+
+.section-nav-cta i {
+    color: #fca5a5;
+    font-size: 0.68rem;
+    transition: transform 200ms ease;
+}
+
+.section-nav-cta:hover i {
+    transform: translateX(3px);
+}
+
+.section-nav a:focus-visible {
+    outline: 2px solid #d9232a;
+    outline-offset: 4px;
 }
 
 .editorial-heading {
@@ -578,68 +669,6 @@ body {
     display: block;
 }
 
-#hallenbau .hall-card {
-    padding: 0;
-    overflow: hidden;
-    background: #fff;
-    justify-content: flex-start;
-    border-color: rgba(15, 23, 42, 0.1);
-    box-shadow: 0 16px 48px -36px rgba(13, 17, 23, 0.55);
-    transition: border-color 240ms ease, box-shadow 240ms ease;
-}
-
-#hallenbau .hall-card:hover {
-    border-color: rgba(217, 35, 42, 0.55);
-    box-shadow: 0 20px 52px -36px rgba(13, 17, 23, 0.5);
-}
-
-.hall-card .hall-card-media {
-    position: relative;
-    order: -1;
-    height: 15rem;
-    margin: 0 !important;
-    border: 0;
-    border-radius: 0;
-}
-
-.hall-card-media::after {
-    position: absolute;
-    inset: 30% 0 0;
-    content: "";
-    background: linear-gradient(0deg, rgba(13, 17, 23, 0.48), transparent);
-    pointer-events: none;
-}
-
-.hall-card-media img {
-    transition: filter 240ms ease;
-}
-
-.hall-card-content > div:first-child {
-    transition: background-color 240ms ease;
-    margin-top: 0 !important;
-    margin-bottom: 1.5rem !important;
-}
-
-.hall-card:hover .hall-card-content > div:first-child {
-    background-color: #fff;
-}
-
-.hall-card-content {
-    padding: 1.75rem;
-}
-
-.hall-card-content::before {
-    display: block;
-    margin-bottom: 1rem;
-    color: #d9232a;
-    font: 700 0.7rem/1.2 'JetBrains Mono', monospace;
-    letter-spacing: 0.12em;
-}
-
-.hall-card-content h3 {
-    margin-top: 0 !important;
-}
-
 @media (max-width: 639px) {
     .hero-section {
         min-height: 100svh;
@@ -674,20 +703,6 @@ body {
 
     .hero-stats span + span::before {
         margin-right: 0.8rem;
-    }
-
-    .section-nav > div {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 0;
-        overflow: visible;
-        padding-top: 0.5rem;
-        padding-bottom: 0.5rem;
-    }
-
-    .section-nav a {
-        min-height: 2.75rem;
-        align-items: center;
     }
 
     .hall-section-cta {
@@ -741,40 +756,143 @@ body {
 }
 
 .hall-card-link:focus-visible {
-    border-radius: 1.5rem;
     outline: 3px solid #d9232a;
-    outline-offset: 5px;
+    outline-offset: 4px;
 }
 
 #hallenbau .hall-card {
-    height: 100%;
-    transition: transform 420ms cubic-bezier(0.2, 0.7, 0.3, 1), border-color 240ms ease, box-shadow 300ms ease;
+    display: flex;
+    min-height: 100%;
+    flex-direction: column;
+    overflow: hidden;
+    border: 1px solid rgba(38, 50, 56, 0.15);
+    background: #f8f9f8;
+    box-shadow: 0 14px 36px -32px rgba(13, 17, 23, 0.65);
+    transition: transform 320ms cubic-bezier(0.2, 0.7, 0.3, 1), border-color 240ms ease, box-shadow 300ms ease;
 }
 
 .hall-card-link:hover .hall-card,
 .hall-card-link:focus-visible .hall-card {
-    transform: translateY(-8px);
-    border-color: rgba(217, 35, 42, 0.55);
-    box-shadow: 0 28px 60px -34px rgba(13, 17, 23, 0.56);
+    transform: translateY(-5px);
+    border-color: rgba(217, 35, 42, 0.6);
+    box-shadow: 0 24px 44px -32px rgba(13, 17, 23, 0.65);
 }
 
-.hall-card-media img {
-    transition: filter 350ms ease, transform 800ms cubic-bezier(0.2, 0.7, 0.3, 1);
+.hall-card-visual {
+    position: relative;
+    display: flex;
+    min-height: 12.5rem;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background-color: #e7ebea;
+    background-image:
+        linear-gradient(rgba(38, 50, 56, 0.055) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(38, 50, 56, 0.055) 1px, transparent 1px);
+    background-size: 24px 24px;
 }
 
-.hall-card-link:hover .hall-card-media img,
-.hall-card-link:focus-visible .hall-card-media img {
-    filter: saturate(1.12);
-    transform: scale(1.055);
+.hall-visual-steel {
+    background-color: #e3e8e9;
+}
+
+.hall-visual-commercial {
+    background-color: #e8e9e5;
+}
+
+.hall-card-visual svg {
+    width: min(86%, 21rem);
+    height: auto;
+    overflow: visible;
+}
+
+.drawing-grid {
+    stroke: rgba(38, 50, 56, 0.16);
+    stroke-width: 0.7;
+}
+
+.drawing-main {
+    stroke: #263238;
+    stroke-linecap: square;
+    stroke-linejoin: miter;
+    stroke-width: 3;
+}
+
+.drawing-accent {
+    stroke: #d9232a;
+    stroke-linecap: square;
+    stroke-linejoin: miter;
+    stroke-width: 1.8;
+}
+
+.drawing-dimension {
+    stroke: #647078;
+    stroke-linecap: square;
+    stroke-linejoin: miter;
+    stroke-width: 1;
+}
+
+.hall-card-visual-label,
+.hall-card-visual-caption {
+    position: absolute;
+    z-index: 1;
+    color: #46535a;
+    font: 700 0.58rem/1.2 'JetBrains Mono', monospace;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.hall-card-visual-label {
+    top: 1rem;
+    left: 1.25rem;
+}
+
+.hall-card-visual-caption {
+    right: 1.25rem;
+    bottom: 1rem;
+    color: #263238;
+    font-size: 0.62rem;
+}
+
+.hall-card-content {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1.7rem 1.75rem 1.8rem;
+    border-top: 1px solid rgba(38, 50, 56, 0.12);
+}
+
+.hall-card-code {
+    margin-bottom: 1.15rem;
+    color: #d9232a;
+    font: 700 0.65rem/1.2 'JetBrains Mono', monospace;
+    letter-spacing: 0.12em;
+}
+
+.hall-card-content h3 {
+    margin: 0 0 0.75rem;
+    color: #172126;
+    font-size: clamp(1.3rem, 2vw, 1.65rem);
+    font-weight: 850;
+    letter-spacing: -0.035em;
+}
+
+.hall-card-content p {
+    margin: 0 0 1.65rem;
+    color: #59666c;
+    font-size: 0.88rem;
+    line-height: 1.75;
 }
 
 .hall-card-more {
     display: inline-flex;
     align-items: center;
     gap: 0.65rem;
+    margin-top: auto;
     padding-top: 0.25rem;
     color: #263238;
-    font-size: 0.82rem;
+    font-size: 0.78rem;
     font-weight: 800;
 }
 
@@ -788,16 +906,72 @@ body {
     transform: translateX(5px);
 }
 
-#hallenbau .hall-card-link:nth-child(1) .hall-card-content::before {
-    content: "01 / TRAGWERK";
+@media (max-width: 1023px) {
+    .section-nav > div {
+        grid-template-columns: auto minmax(0, 1fr);
+        gap: 0.5rem 1rem;
+        padding-top: 0.65rem;
+        padding-bottom: 0.65rem;
+    }
+
+    .section-nav-links {
+        grid-column: 1 / -1;
+        grid-row: 2;
+        justify-content: flex-start;
+        gap: clamp(1rem, 3vw, 2rem);
+        padding: 0.45rem 0 0.2rem;
+        overflow-x: auto;
+        scrollbar-width: none;
+    }
+
+    .section-nav-links::-webkit-scrollbar {
+        display: none;
+    }
+
+    .section-nav-cta {
+        grid-column: 2;
+        grid-row: 1;
+        justify-self: end;
+        min-height: 2.5rem;
+    }
 }
 
-#hallenbau .hall-card-link:nth-child(2) .hall-card-content::before {
-    content: "02 / STAHLBAU";
+@media (max-width: 639px) {
+    .section-nav > div {
+        padding-right: 1rem;
+        padding-left: 1rem;
+    }
+
+    .section-nav-links {
+        margin-right: -1rem;
+    }
+
+    .section-nav-links a {
+        min-height: 2rem;
+        align-items: center;
+        font-size: 0.7rem;
+    }
+
+    .section-nav-cta {
+        min-height: 2.35rem;
+        padding: 0 0.7rem;
+        font-size: 0.65rem !important;
+    }
+
+    .hall-card-visual {
+        min-height: 11rem;
+    }
+
+    .hall-card-content {
+        padding: 1.4rem;
+    }
 }
 
-#hallenbau .hall-card-link:nth-child(3) .hall-card-content::before {
-    content: "03 / GEWERBE";
+@media (prefers-reduced-motion: reduce) {
+    .hall-card-link:hover .hall-card,
+    .hall-card-link:focus-visible .hall-card {
+        transform: none;
+    }
 }
 
 .detail-page {

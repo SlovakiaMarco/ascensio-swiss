@@ -51,6 +51,25 @@
 </head>
 <body x-data="site" class="antialiased">
 
+    <nav class="section-nav" aria-label="Seitenabschnitte">
+        <div class="max-w-7xl mx-auto px-6">
+            <a href="#main-content" class="section-nav-brand" aria-label="Ascensio Swiss — zur Startseite">
+                <img src="assets/logo.svg" alt="" aria-hidden="true">
+            </a>
+            <div class="section-nav-links">
+                <a href="#hallenbau"><span>01</span> Hallenbau</a>
+                <a href="projekte.html"><span>02</span> Projekte</a>
+                <a href="#ablauf"><span>03</span> Ablauf</a>
+                <a href="ueber-uns.html"><span>04</span> Über uns</a>
+                <a href="#gewerke"><span>05</span> Leistungen</a>
+                <a href="kontakt.html"><span>06</span> Kontakt</a>
+            </div>
+            <a href="kontakt.html" class="section-nav-cta">
+                Projekt anfragen <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+            </a>
+        </div>
+    </nav>
+
     <!-- HERO SECTION -->
     <section id="main-content" class="hero-section relative bg-swiss-dark border-b border-slate-800">
         <span class="hero-side-line" aria-hidden="true"></span>
@@ -98,17 +117,6 @@
         </div>
     </section>
 
-    <nav class="section-nav" aria-label="Seitenabschnitte">
-        <div class="max-w-7xl mx-auto px-6">
-            <a href="#hallenbau"><span>01</span> Hallenbau</a>
-            <a href="projekte.html"><span>02</span> Projekte</a>
-            <a href="#ablauf"><span>03</span> Ablauf</a>
-            <a href="ueber-uns.html"><span>04</span> Über uns</a>
-            <a href="#gewerke"><span>05</span> Leistungen</a>
-            <a href="kontakt.html"><span>06</span> Kontakt</a>
-        </div>
-    </nav>
-
     <!-- MAIN OFFER: CONCRETE AND STEEL HALLS -->
     <section id="hallenbau" class="editorial-section py-24 bg-swiss-concrete border-b border-slate-300">
         <div class="max-w-7xl mx-auto px-6">
@@ -117,71 +125,78 @@
                 <div>
                     <span class="section-eyebrow">01 / Unsere Hauptkompetenz</span>
                     <h2 class="text-4xl sm:text-5xl lg:text-6xl font-black text-slate-900 tracking-tight">
-                        Gebaut für den<br><span class="text-swiss-red">Betrieb von morgen.</span>
+                        Hallenbau, der<br><span class="text-swiss-red">zum Betrieb passt.</span>
                     </h2>
                 </div>
                 <p class="max-w-lg text-slate-600 text-base sm:text-lg leading-relaxed">
-                    Wir konzentrieren uns auf Beton- und Stahlhallen für Logistik, Produktion und Gewerbe. Die passende Bauweise richtet sich nach Nutzung, Standort und Projekt.
+                    Von der Tragstruktur bis zur Arbeitsumgebung: Wir wählen die Bauweise nach Nutzung, Standort und den Anforderungen Ihres Projekts.
                 </p>
             </div>
 
             <div class="grid md:grid-cols-3 gap-8">
                 <a href="beton-skelettbau.html" class="hall-card-link" aria-label="Mehr über Beton-Skelettbau erfahren">
-                    <article class="hall-card bg-swiss-panel rounded-3xl p-8 border border-slate-300 hover:border-slate-400 hover:shadow-lg transition-all duration-300 flex flex-col justify-between group">
-                        <div class="hall-card-content space-y-6">
-                            <div class="w-14 h-14 rounded-2xl bg-slate-100 border border-slate-300 text-swiss-graphite flex items-center justify-center text-2xl font-bold transition-colors">
-                                <i class="fa-solid fa-cubes-stacked"></i>
-                            </div>
-                            <h3 class="text-2xl font-black text-slate-900">Beton-Skelettbau</h3>
-                            <p class="text-slate-600 text-sm leading-relaxed">
-                                Vorgefertigte Betonstützen und Binder schaffen eine robuste Grundlage für Produktions- und Gewerbebauten.
-                            </p>
-                            <span class="hall-card-more">Details entdecken <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span>
+                    <article class="hall-card">
+                        <div class="hall-card-visual hall-visual-concrete" aria-hidden="true">
+                            <span class="hall-card-visual-label">TRAGWERK / 01</span>
+                            <svg viewBox="0 0 320 180" fill="none">
+                                <path class="drawing-grid" d="M24 28H296M24 68H296M24 108H296M24 148H296M56 18V162M112 18V162M168 18V162M224 18V162M280 18V162"/>
+                                <path class="drawing-main" d="M54 52H266M54 54V144M266 54V144M54 144H266M112 54V144M168 54V144M224 54V144"/>
+                                <path class="drawing-accent" d="M46 48H274M46 148H274M104 54V144M176 54V144"/>
+                                <path class="drawing-dimension" d="M54 36V28M266 36V28M54 32H266M160 28L166 32L160 36"/>
+                            </svg>
+                            <span class="hall-card-visual-caption">Beton-Skelettbau</span>
                         </div>
-                        <div class="hall-card-media image-placeholder mt-8 rounded-xl overflow-hidden border border-slate-200 h-48 bg-slate-200" role="img" aria-label="Bildplatzhalter: Beton-Skelettbau">
-                            <span class="image-placeholder-label">Bild einsetzen</span>
+                        <div class="hall-card-content">
+                            <span class="hall-card-code">01 / TRAGWERK</span>
+                            <h3>Beton-Skelettbau</h3>
+                            <p>Vorgefertigte Stützen und Binder bilden eine robuste Tragstruktur für Produktions- und Gewerbebauten.</p>
+                            <span class="hall-card-more">Bauweise entdecken <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span>
                         </div>
                     </article>
                 </a>
 
                 <a href="stahlhallen.html" class="hall-card-link" aria-label="Mehr über Stahlhallen erfahren">
-                    <article class="hall-card bg-swiss-panel rounded-3xl p-8 border border-slate-300 hover:border-slate-400 hover:shadow-lg transition-all duration-300 flex flex-col justify-between group">
-                        <div class="hall-card-content space-y-6">
-                            <div class="w-14 h-14 rounded-2xl bg-slate-100 border border-slate-300 text-swiss-graphite flex items-center justify-center text-2xl font-bold transition-colors">
-                                <i class="fa-solid fa-warehouse"></i>
-                            </div>
-                            <h3 class="text-2xl font-black text-slate-900">Stahlhallen</h3>
-                            <p class="text-slate-600 text-sm leading-relaxed">
-                                Stahlkonstruktionen für flexibel nutzbare Flächen in Logistik, Produktion und Gewerbe.
-                            </p>
-                            <span class="hall-card-more">Details entdecken <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span>
+                    <article class="hall-card">
+                        <div class="hall-card-visual hall-visual-steel" aria-hidden="true">
+                            <span class="hall-card-visual-label">SPANNWEITE / 02</span>
+                            <svg viewBox="0 0 320 180" fill="none">
+                                <path class="drawing-grid" d="M24 28H296M24 68H296M24 108H296M24 148H296M56 18V162M112 18V162M168 18V162M224 18V162M280 18V162"/>
+                                <path class="drawing-main" d="M56 144V84L96 42H224L264 84V144M96 42L112 84M224 42L208 84M112 84V144M208 84V144M56 84H264M56 144H264"/>
+                                <path class="drawing-accent" d="M48 148H272M88 46L96 38H224L232 46M120 84V144M200 84V144"/>
+                                <path class="drawing-dimension" d="M56 66V58M264 66V58M56 62H264M157 58L163 62L157 66"/>
+                            </svg>
+                            <span class="hall-card-visual-caption">Stahlhallen</span>
                         </div>
-                        <div class="hall-card-media image-placeholder mt-8 rounded-xl overflow-hidden border border-slate-200 h-48 bg-slate-200" role="img" aria-label="Bildplatzhalter: Stahlhalle">
-                            <span class="image-placeholder-label">Bild einsetzen</span>
+                        <div class="hall-card-content">
+                            <span class="hall-card-code">02 / STAHLBAU</span>
+                            <h3>Stahlhallen</h3>
+                            <p>Stahlkonstruktionen schaffen flexibel nutzbare Flächen für Logistik, Produktion und Gewerbe.</p>
+                            <span class="hall-card-more">Bauweise entdecken <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span>
                         </div>
                     </article>
                 </a>
 
                 <a href="gewerbe-buero.html" class="hall-card-link" aria-label="Mehr über Gewerbe- und Bürogebäude erfahren">
-                    <article class="hall-card bg-swiss-panel rounded-3xl p-8 border border-slate-300 hover:border-slate-400 hover:shadow-lg transition-all duration-300 flex flex-col justify-between group">
-                        <div class="hall-card-content space-y-6">
-                            <div class="w-14 h-14 rounded-2xl bg-slate-100 border border-slate-300 text-swiss-graphite flex items-center justify-center text-2xl font-bold transition-colors">
-                                <i class="fa-solid fa-building-user"></i>
-                            </div>
-                            <h3 class="text-2xl font-black text-slate-900">Gewerbe &amp; Büro</h3>
-                            <p class="text-slate-600 text-sm leading-relaxed">
-                                Produktions- und Arbeitsbereiche werden in einem stimmigen Gebäudekonzept zusammengeführt.
-                            </p>
-                            <span class="hall-card-more">Details entdecken <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span>
+                    <article class="hall-card">
+                        <div class="hall-card-visual hall-visual-commercial" aria-hidden="true">
+                            <span class="hall-card-visual-label">NUTZUNG / 03</span>
+                            <svg viewBox="0 0 320 180" fill="none">
+                                <path class="drawing-grid" d="M24 28H296M24 68H296M24 108H296M24 148H296M56 18V162M112 18V162M168 18V162M224 18V162M280 18V162"/>
+                                <path class="drawing-main" d="M52 144V62H176V144M176 144V40H268V144M52 144H268M68 78H92V102H68zM108 78H132V102H108zM148 78H168V102H148zM194 58H216V82H194zM232 58H254V82H232z"/>
+                                <path class="drawing-accent" d="M44 148H276M52 56H176M176 34H268M68 112H160V144M194 92H254V144"/>
+                                <path class="drawing-dimension" d="M52 46V38M176 46V38M52 42H176M110 38L116 42L110 46"/>
+                            </svg>
+                            <span class="hall-card-visual-caption">Gewerbe &amp; Büro</span>
                         </div>
-                        <div class="hall-card-media image-placeholder mt-8 rounded-xl overflow-hidden border border-slate-200 h-48 bg-slate-200" role="img" aria-label="Bildplatzhalter: Gewerbe- und Bürogebäude">
-                            <span class="image-placeholder-label">Bild einsetzen</span>
+                        <div class="hall-card-content">
+                            <span class="hall-card-code">03 / GEBÄUDEKONZEPT</span>
+                            <h3>Gewerbe &amp; Büro</h3>
+                            <p>Produktions- und Arbeitsbereiche werden in einem abgestimmten Gebäudekonzept zusammengeführt.</p>
+                            <span class="hall-card-more">Gebäudekonzept entdecken <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span>
                         </div>
                     </article>
                 </a>
             </div>
-
-            <p class="mt-4 text-xs text-slate-500">Bildflächen sind Platzhalter und können durch eigene Aufnahmen ersetzt werden.</p>
 
             <div class="hall-section-cta">
                 <p>Sie planen ein konkretes Vorhaben?</p>
