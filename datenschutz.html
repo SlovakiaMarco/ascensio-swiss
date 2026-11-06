@@ -5,6 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Datenschutzerklärung | Ascensio Swiss</title>
     <meta name="description" content="Datenschutzhinweise von Ascensio Swiss – Entwurf zur rechtlichen Prüfung.">
+    <script>
+        (function (d) {
+            try {
+                var s = window.sessionStorage;
+                if (s.getItem('as-wipe')) {
+                    s.removeItem('as-wipe');
+                    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) { d.documentElement.classList.add('wipe-in'); }
+                }
+            } catch (e) {}
+        })(document);
+    </script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
@@ -15,9 +26,14 @@
     <header class="detail-topbar">
         <a href="index.html" class="detail-back"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Startseite</a>
         <a href="index.html" class="detail-brand"><img src="assets/logo.svg" alt="Ascensio Swiss – Startseite"></a>
-        <nav class="detail-nav" aria-label="Hauptnavigation">
-            <a href="projekte.html">Projekte</a><a href="ueber-uns.html">Über uns</a><a href="kontakt.html">Kontakt</a>
-        </nav>
+        <div class="detail-topbar-actions">
+            <nav class="detail-nav" aria-label="Hauptnavigation">
+                <a href="projekte.html">Projekte</a><a href="ueber-uns.html">Über uns</a><a href="kontakt.html">Kontakt</a>
+            </nav>
+            <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="mobile-menu" aria-label="Menü öffnen">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
     </header>
     <main>
         <section class="page-heading legal-page">
@@ -26,7 +42,7 @@
             <p class="legal-draft-notice">Entwurf / vor Veröffentlichung durch Ascensio Swiss und eine qualifizierte Rechtsberatung vervollständigen und prüfen lassen.</p>
         </section>
         <article class="legal-content">
-            <section><h2>Verantwortliche Stelle</h2><p>Ascensio Swiss<br>8132 Egg b. Zürich, Schweiz<br>E-Mail: info@ascensioswiss.ch<br>Telefon: +41 00 000 0000 (Platzhalter)</p><p>Verantwortliche Person und vollständige Unternehmensangaben hier bestätigen und ergänzen.</p></section>
+            <section><h2>Verantwortliche Stelle</h2><p>Ascensio Swiss<br>8132 Egg b. Zürich, Schweiz<br>E-Mail: info@ascensioswiss.ch<br>Telefon: +41 77 520 56 26</p><p>Verantwortliche Person und vollständige Unternehmensangaben hier bestätigen und ergänzen.</p></section>
             <section><h2>Welche Daten werden verarbeitet?</h2><p>Die konkrete Liste hängt davon ab, welche Website-Funktionen tatsächlich eingesetzt werden. Bitte Kontaktformulare, Server-Logs, eingebundene Dienste, Analyse- oder Marketing-Werkzeuge inventarisieren und hier korrekt beschreiben.</p></section>
             <section><h2>Zweck und Rechtsgrundlage</h2><p>Verarbeitungszwecke, Rechtsgrundlagen, Empfänger, Speicherfristen und allfällige Übermittlungen ins Ausland müssen für die tatsächlich genutzten Dienste dokumentiert und rechtlich geprüft werden.</p></section>
             <section><h2>Ihre Rechte und Kontakt</h2><p>Die geltenden Rechte betroffener Personen, das Vorgehen für Anfragen sowie die zuständige Aufsichtsbehörde sind nach Prüfung der anwendbaren Rechtsvorschriften zu ergänzen.</p></section>

@@ -4,7 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projekt | Ascensio Swiss</title>
-    <meta name="description" content="Projektprofil von Ascensio Swiss – Projektangaben und Bildmaterial können nach Freigabe ergänzt werden.">
+    <meta name="description" content="Referenzprojekt von Ascensio Swiss – Bauunternehmen für Beton- und Stahlhallen in der Schweiz.">
+    <script>
+        (function (d) {
+            try {
+                var s = window.sessionStorage;
+                if (s.getItem('as-wipe')) {
+                    s.removeItem('as-wipe');
+                    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) { d.documentElement.classList.add('wipe-in'); }
+                }
+            } catch (e) {}
+        })(document);
+    </script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
@@ -16,9 +27,14 @@
     <header class="detail-topbar">
         <a href="projekte.html" class="detail-back"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Alle Projekte</a>
         <a href="index.html" class="detail-brand"><img src="assets/logo.svg" alt="Ascensio Swiss – Startseite"></a>
-        <nav class="detail-nav" aria-label="Hauptnavigation">
-            <a href="projekte.html">Projekte</a><a href="ueber-uns.html">Über uns</a><a href="kontakt.html">Kontakt</a>
-        </nav>
+        <div class="detail-topbar-actions">
+            <nav class="detail-nav" aria-label="Hauptnavigation">
+                <a href="projekte.html">Projekte</a><a href="ueber-uns.html">Über uns</a><a href="kontakt.html">Kontakt</a>
+            </nav>
+            <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="mobile-menu" aria-label="Menü öffnen">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
     </header>
     <main>
         <section class="project-detail-hero">
@@ -26,22 +42,25 @@
             <div class="project-detail-shade"></div>
             <div class="project-detail-copy">
                 <span class="section-eyebrow">Referenz / <span data-project-number>01</span></span>
-                <h1 data-project-title>Projektname hier ergänzen</h1>
-                <p>Ort / Kanton hier ergänzen <span aria-hidden="true">·</span> Gebäudetyp hier ergänzen</p>
+                <h1 data-project-title>Projekt 01</h1>
+                <p>Ausgewähltes Referenzprojekt <span aria-hidden="true">·</span> Ascensio Swiss</p>
             </div>
         </section>
         <section class="project-detail-content">
             <div class="project-detail-lead">
                 <span class="section-eyebrow">Das Projekt</span>
                 <h2>Aufgabe und Lösung.</h2>
-                <p>Die bisherige Galerie enthält ein Foto, aber keine Projektbeschreibung. Bauaufgabe, Anforderungen und Lösung bitte nach interner Prüfung ergänzen.</p>
+                <p>Dieses Projekt ist Teil unserer Referenzgalerie. Gerne erläutern wir Ihnen Bauaufgabe, Anforderungen und unsere Lösung in einem persönlichen Gespräch – und zeigen, wie sich die Erfahrungen auf Ihr Vorhaben übertragen lassen.</p>
             </div>
-            <dl class="project-facts">
-                <div><dt>Bauaufgabe</dt><dd>Nach Freigabe ergänzen</dd></div>
-                <div><dt>Leistungsumfang</dt><dd>Nach Freigabe ergänzen</dd></div>
-                <div><dt>Standort</dt><dd>Nach Freigabe ergänzen</dd></div>
-                <div><dt>Projektzeitraum</dt><dd>Nach Freigabe ergänzen</dd></div>
-            </dl>
+            <div>
+                <span class="section-eyebrow">Ascensio Swiss im Überblick</span>
+                <dl class="project-facts">
+                    <div><dt>Kerngeschäft</dt><dd>Beton- und Stahlhallen für Logistik, Produktion und Gewerbe</dd></div>
+                    <div><dt>Bauweisen</dt><dd>Beton-Skelettbau, Stahlkonstruktion, Gewerbe- und Bürobau</dd></div>
+                    <div><dt>Erfahrung</dt><dd>Über 20 Jahre in der Schweiz sowie in Mittel- und Westeuropa</dd></div>
+                    <div><dt>Kontakt</dt><dd><a href="tel:+41775205626">+41 77 520 56 26</a></dd></div>
+                </dl>
+            </div>
         </section>
         <section class="detail-cta">
             <div><span class="section-eyebrow">Ähnliches Vorhaben?</span><h2>Lassen Sie uns darüber sprechen.</h2><p>Wir klären mit Ihnen die Anforderungen an Ihr Hallen- oder Gewerbeprojekt.</p></div>

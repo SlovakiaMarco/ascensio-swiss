@@ -4,7 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Über uns | Ascensio Swiss</title>
-    <meta name="description" content="Ascensio Swiss – Schweizer Unternehmen mit erfahrenen Bauteams und klarem Fokus auf Beton- und Stahlhallen.">
+    <meta name="description" content="Ascensio Swiss – Schweizer Bauunternehmen mit über 20 Jahren Erfahrung im Bau von Beton- und Stahlhallen für Logistik, Produktion und Gewerbe.">
+    <script>
+        (function (d) {
+            try {
+                var s = window.sessionStorage;
+                if (s.getItem('as-wipe')) {
+                    s.removeItem('as-wipe');
+                    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) { d.documentElement.classList.add('wipe-in'); }
+                }
+            } catch (e) {}
+        })(document);
+    </script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
@@ -16,58 +27,93 @@
     <header class="detail-topbar">
         <a href="index.html" class="detail-back"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Startseite</a>
         <a href="index.html" class="detail-brand"><img src="assets/logo.svg" alt="Ascensio Swiss – Startseite"></a>
-        <nav class="detail-nav" aria-label="Hauptnavigation">
-            <a href="projekte.html">Projekte</a><a href="ueber-uns.html" aria-current="page">Über uns</a><a href="kontakt.html">Kontakt</a>
-        </nav>
+        <div class="detail-topbar-actions">
+            <nav class="detail-nav" aria-label="Hauptnavigation">
+                <a href="projekte.html">Projekte</a><a href="ueber-uns.html" aria-current="page">Über uns</a><a href="kontakt.html">Kontakt</a>
+            </nav>
+            <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="mobile-menu" aria-label="Menü öffnen">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
     </header>
     <main>
         <section class="page-heading about-page-heading">
             <span class="section-eyebrow">Ascensio Swiss / Über uns</span>
-            <h1>Erfahrung, die<br><span>Projekte möglich macht.</span></h1>
-            <p>Wir sind ein Schweizer Unternehmen mit qualifizierten Fachkräften für Bauprojekte. Mehr als 20 Jahre Erfahrung unserer Experten bilden die Grundlage. Heute richten wir unser Angebot klar auf Beton- und Stahlhallen für Logistik, Produktion und Gewerbe aus.</p>
+            <h1>Erfahrung, die<br><span>Hallen möglich macht.</span></h1>
+            <p>Ascensio Swiss ist ein Schweizer Bauunternehmen mit Sitz in Egg bei Zürich. Seit über 20 Jahren realisieren unsere Fachleute Beton- und Stahlhallen für Logistik, Produktion und Gewerbe – in der Schweiz sowie in Mittel- und Westeuropa.</p>
         </section>
+
         <section class="about-story">
             <div class="about-story-copy">
-                <span class="section-eyebrow">Unser Schwerpunkt</span>
-                <h2>Hallenbau im Zentrum.<br><span>Menschen dahinter.</span></h2>
-                <p>Eine gute Zusammenarbeit beginnt mit klaren Anforderungen. Wir betrachten Nutzung, Standort, Ablauf und Projektumfang gemeinsam und stimmen die nächsten Schritte darauf ab.</p>
-                <p>Ergänzende Gewerke wie Sanitär, Elektro, Trockenbau, Montage und Malerarbeiten können projektbezogen einbezogen werden. Sie bleiben eine Ergänzung zu unserem Hauptangebot im Hallenbau.</p>
+                <span class="section-eyebrow">Unser Kerngeschäft</span>
+                <h2>Beton und Stahl.<br><span>Aus Erfahrung.</span></h2>
+                <p>Ob Logistikzentrum, Produktionshalle oder Gewerbebau: Wir begleiten Hallenprojekte von der ersten Abklärung über die Planung bis zur Übergabe. Nutzung, Standort und betriebliche Abläufe betrachten wir gemeinsam mit Ihnen und wählen die passende Bauweise – Beton-Skelettbau, Stahlkonstruktion oder eine Kombination aus beidem.</p>
+                <p>Dafür setzen wir auf eigene, qualifizierte Bauteams und eingespielte Abläufe. So liegen Koordination und Ausführung auf der Baustelle in einer Hand.</p>
+                <p class="about-story-note">Ergänzend übernehmen wir auf Wunsch weitere Gewerke wie Sanitär, Heizung, Elektro, Trockenbau oder Malerarbeiten.</p>
                 <a href="index.html#hallenbau" class="detail-button">Hallenbau entdecken <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
             </div>
-            <img class="about-story-image" src="assets/unternehmen/teamfoto.jpg" alt="Mitarbeiter auf einer Baustelle" loading="lazy">
+            <img class="about-story-image" src="assets/unternehmen/teamfoto.jpg" alt="Bauleiter von Ascensio Swiss vor einem Betonskelettbau mit Baukran" loading="lazy">
         </section>
+
+        <section class="stats-band stats-band--page texture-grid" aria-label="Ascensio Swiss in Zahlen">
+            <dl class="stats-grid">
+                <div class="stat">
+                    <dt>Jahre Erfahrung im Beton- und Stahlhallenbau</dt>
+                    <dd><span data-count="20">20</span><span class="stat-plus" aria-hidden="true">+</span></dd>
+                </div>
+                <div class="stat">
+                    <dt>Referenzprojekte in unserer Galerie</dt>
+                    <dd><span data-count="11">11</span></dd>
+                </div>
+                <div class="stat">
+                    <dt>Bauweisen im Fokus: Beton &amp; Stahl</dt>
+                    <dd><span data-count="2">02</span></dd>
+                </div>
+                <div class="stat">
+                    <dt>Stunden erreichbar für unsere Bauteams</dt>
+                    <dd><span data-count="24">24</span><span class="stat-plus" aria-hidden="true">h</span></dd>
+                </div>
+            </dl>
+        </section>
+
         <section class="company-support">
             <div class="detail-info-heading">
-                <span class="section-eyebrow">Was ein Team unterstützt</span>
+                <span class="section-eyebrow">Komplettservice</span>
                 <h2>Gute Arbeit braucht<br>gute Rahmenbedingungen.</h2>
-                <p>Die bisherige Unternehmenspräsentation beschreibt ergänzende Unterstützung für Mitarbeitende und Baustellen. Bitte prüfen Sie vor Veröffentlichung, welche Punkte weiterhin aktuell sind.</p>
+                <p>Damit sich unsere Fachkräfte voll auf die Qualität ihrer Arbeit konzentrieren können, kümmern wir uns um alles Weitere – von der Administration bis zur Unterkunft, rund um die Uhr erreichbar.</p>
             </div>
             <div class="support-grid">
-                <article><i class="fa-solid fa-file-shield" aria-hidden="true"></i><h3>Dokumentation</h3><p>Administrative Unterlagen und projektbezogene Anforderungen im Blick behalten.</p></article>
-                <article><i class="fa-solid fa-helmet-safety" aria-hidden="true"></i><h3>Sicherheit</h3><p>Sicherheitsstandards und die notwendige Vorbereitung für den jeweiligen Einsatz berücksichtigen.</p></article>
-                <article><i class="fa-solid fa-screwdriver-wrench" aria-hidden="true"></i><h3>Ausstattung</h3><p>Werkzeuge, Arbeitskleidung und notwendige Ausrüstung passend zur Aufgabe organisieren.</p></article>
-                <article><i class="fa-solid fa-people-roof" aria-hidden="true"></i><h3>Logistische Unterstützung</h3><p>Unterkunft, Mobilität und Betreuung je nach Projekt und Einsatz abstimmen.</p></article>
+                <article><i class="fa-solid fa-file-shield" aria-hidden="true"></i><h3>Administration &amp; Versicherung</h3><p>Bewilligungen, Lizenzen und rechtliche Anforderungen für jedes Projekt – inklusive Haftpflichtversicherung für alle Mitarbeitenden.</p></article>
+                <article><i class="fa-solid fa-helmet-safety" aria-hidden="true"></i><h3>Sicherheit</h3><p>Regelmässige Sicherheitsschulungen sorgen für hohe Standards auf jeder Baustelle.</p></article>
+                <article><i class="fa-solid fa-screwdriver-wrench" aria-hidden="true"></i><h3>Ausrüstung</h3><p>Markenwerkzeuge von Hilti und Milwaukee sowie professionelle Arbeitskleidung von Strauss.</p></article>
+                <article><i class="fa-solid fa-truck-pickup" aria-hidden="true"></i><h3>Logistik &amp; Unterkunft</h3><p>Firmenfahrzeuge, komfortable Unterkünfte und Betreuung – 24 Stunden am Tag erreichbar.</p></article>
             </div>
         </section>
-        <section class="leadership-section">
-            <div class="leadership-heading">
-                <span class="section-eyebrow">Geschäftsführung &amp; Aktionariat</span>
-                <h2>Die Menschen<br>hinter Ascensio Swiss.</h2>
-                <p>Platzhalter zur Abstimmung. Namen, Funktionen und Kontaktdaten vor Veröffentlichung mit dem Unternehmen bestätigen.</p>
+
+        <section class="values-section">
+            <div class="values-media">
+                <img src="assets/unternehmen/bauteam-03.jpg" alt="Bauleiterin von Ascensio Swiss mit Schutzhelm und Schutzbrille" loading="lazy" data-parallax="5">
             </div>
-            <div class="leadership-grid">
-                <article class="leader-card">
-                    <div class="leader-photo image-placeholder" role="img" aria-label="Bildplatzhalter: Geschäftsführung"><span class="image-placeholder-label">Porträt einsetzen</span></div>
-                    <div class="leader-card-copy"><span class="section-eyebrow">Geschäftsführer</span><h3>Meno Priezvisko</h3><a href="tel:+41000000000"><i class="fa-solid fa-phone" aria-hidden="true"></i> +41 00 000 0000</a><p>Profil, Verantwortungsbereich und kurze berufliche Vorstellung hier ergänzen.</p></div>
-                </article>
-                <article class="leader-card">
-                    <div class="leader-photo image-placeholder" role="img" aria-label="Bildplatzhalter: Aktionariat"><span class="image-placeholder-label">Porträt einsetzen</span></div>
-                    <div class="leader-card-copy"><span class="section-eyebrow">Aktionär</span><h3>Meno Priezvisko</h3><a href="tel:+41000000000"><i class="fa-solid fa-phone" aria-hidden="true"></i> +41 00 000 0000</a><p>Profil, Rolle im Unternehmen und kurze berufliche Vorstellung hier ergänzen.</p></div>
-                </article>
+            <div class="values-copy">
+                <span class="section-eyebrow">Unsere Arbeitsweise</span>
+                <h2>Faire Bedingungen.<br><span>Professioneller Ansatz.</span></h2>
+                <p>Wir verstehen uns als stabiler Partner, der sich um alle Belange rund um die Ausführung Ihres Projekts kümmert – zuverlässig und mit klarem Blick auf die Qualität des Ergebnisses.</p>
+                <ul class="values-list">
+                    <li><strong>Professionelle Abläufe</strong>Klare Zuständigkeiten von der Abklärung bis zur Übergabe.</li>
+                    <li><strong>Faire Bedingungen</strong>Transparente Absprachen für Auftraggeber und Mitarbeitende.</li>
+                    <li><strong>Zeiteffizienz</strong>Eingespielte Teams und organisierte Logistik auf der Baustelle.</li>
+                    <li><strong>Qualität</strong>Ergebnisse, auf die Sie langfristig bauen können.</li>
+                </ul>
+                <div class="direct-contact">
+                    <span class="direct-contact-label">Direkter Draht zur Geschäftsleitung</span>
+                    <a href="tel:+41775205626"><i class="fa-solid fa-phone" aria-hidden="true"></i> +41 77 520 56 26</a>
+                    <a href="mailto:info@ascensioswiss.ch"><i class="fa-solid fa-envelope" aria-hidden="true"></i> info@ascensioswiss.ch</a>
+                </div>
             </div>
         </section>
+
         <section class="detail-cta">
-            <div><span class="section-eyebrow">Lernen wir uns kennen</span><h2>Ein gutes Projekt beginnt mit einem Gespräch.</h2><p>Teilen Sie Ihre Anforderungen mit uns.</p></div>
+            <div><span class="section-eyebrow">Lernen wir uns kennen</span><h2>Ein gutes Projekt beginnt mit einem Gespräch.</h2><p>Erzählen Sie uns von Ihrem Hallenprojekt – wir beraten Sie gerne persönlich.</p></div>
             <a href="kontakt.html" class="detail-button">Kontakt aufnehmen <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
         </section>
     </main>

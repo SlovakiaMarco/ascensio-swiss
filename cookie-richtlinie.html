@@ -5,6 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cookie-Richtlinie | Ascensio Swiss</title>
     <meta name="description" content="Informationen zu Cookies und ähnlichen Technologien bei Ascensio Swiss – Entwurf zur Prüfung.">
+    <script>
+        (function (d) {
+            try {
+                var s = window.sessionStorage;
+                if (s.getItem('as-wipe')) {
+                    s.removeItem('as-wipe');
+                    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) { d.documentElement.classList.add('wipe-in'); }
+                }
+            } catch (e) {}
+        })(document);
+    </script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
@@ -15,9 +26,14 @@
     <header class="detail-topbar">
         <a href="index.html" class="detail-back"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Startseite</a>
         <a href="index.html" class="detail-brand"><img src="assets/logo.svg" alt="Ascensio Swiss – Startseite"></a>
-        <nav class="detail-nav" aria-label="Hauptnavigation">
-            <a href="projekte.html">Projekte</a><a href="ueber-uns.html">Über uns</a><a href="kontakt.html">Kontakt</a>
-        </nav>
+        <div class="detail-topbar-actions">
+            <nav class="detail-nav" aria-label="Hauptnavigation">
+                <a href="projekte.html">Projekte</a><a href="ueber-uns.html">Über uns</a><a href="kontakt.html">Kontakt</a>
+            </nav>
+            <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="mobile-menu" aria-label="Menü öffnen">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
     </header>
     <main>
         <section class="page-heading legal-page">

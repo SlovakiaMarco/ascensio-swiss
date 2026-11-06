@@ -4,7 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projekte | Ascensio Swiss</title>
-    <meta name="description" content="Projektübersicht von Ascensio Swiss – Platzhalter für freigegebene Referenzen im Hallen- und Gewerbebau.">
+    <meta name="description" content="Referenzprojekte von Ascensio Swiss – eine Auswahl erfolgreich umgesetzter Bauprojekte in der Schweiz sowie in Mittel- und Westeuropa.">
+    <script>
+        (function (d) {
+            try {
+                var s = window.sessionStorage;
+                if (s.getItem('as-wipe')) {
+                    s.removeItem('as-wipe');
+                    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) { d.documentElement.classList.add('wipe-in'); }
+                }
+            } catch (e) {}
+        })(document);
+    </script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
@@ -16,64 +27,68 @@
     <header class="detail-topbar">
         <a href="index.html" class="detail-back"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Startseite</a>
         <a href="index.html" class="detail-brand"><img src="assets/logo.svg" alt="Ascensio Swiss – Startseite"></a>
-        <nav class="detail-nav" aria-label="Hauptnavigation">
-            <a href="projekte.html" aria-current="page">Projekte</a><a href="ueber-uns.html">Über uns</a><a href="kontakt.html">Kontakt</a>
-        </nav>
+        <div class="detail-topbar-actions">
+            <nav class="detail-nav" aria-label="Hauptnavigation">
+                <a href="projekte.html" aria-current="page">Projekte</a><a href="ueber-uns.html">Über uns</a><a href="kontakt.html">Kontakt</a>
+            </nav>
+            <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="mobile-menu" aria-label="Menü öffnen">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
     </header>
     <main>
         <section class="page-heading">
             <span class="section-eyebrow">01 / Referenzen</span>
-            <h1>Projekte im Überblick.</h1>
-            <p>Die bisherige Projektgalerie zeigt elf Referenzfotos. Namen, Standorte und Projektdaten sind dort nicht angegeben und bleiben deshalb vorerst offen.</p>
+            <h1>Unsere<br><span>Projekte.</span></h1>
+            <p>Sehen Sie sich eine Auswahl unserer erfolgreich umgesetzten Projekte an. Details zu Bauaufgabe, Leistungsumfang und Umsetzung erläutern wir Ihnen gerne in einem persönlichen Gespräch.</p>
         </section>
         <section class="project-grid-section">
             <div class="project-grid">
                 <a class="project-card" href="projekt.html?projekt=01">
                     <div class="project-card-media"><img class="project-card-image" src="assets/projekte/projekt-01.jpg" alt="Referenzfoto 01" loading="lazy"><span class="project-card-number">01</span></div>
-                    <div class="project-card-copy"><span class="section-eyebrow">Foto aus der bisherigen Galerie</span><h2>Projekt 01</h2><p>Projektname und weitere Angaben nach Freigabe ergänzen.</p><span class="project-card-link">Projekt ansehen <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span></div>
+                    <div class="project-card-copy"><span class="section-eyebrow">Referenzprojekt</span><h2>Projekt 01</h2><p>Details zu Bauaufgabe und Umsetzung erhalten Sie auf Anfrage.</p><span class="project-card-link">Projekt ansehen <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span></div>
                 </a>
                 <a class="project-card" href="projekt.html?projekt=02">
                     <div class="project-card-media"><img class="project-card-image" src="assets/projekte/projekt-02.jpg" alt="Referenzfoto 02" loading="lazy"><span class="project-card-number">02</span></div>
-                    <div class="project-card-copy"><span class="section-eyebrow">Foto aus der bisherigen Galerie</span><h2>Projekt 02</h2><p>Projektname und weitere Angaben nach Freigabe ergänzen.</p><span class="project-card-link">Projekt ansehen <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span></div>
+                    <div class="project-card-copy"><span class="section-eyebrow">Referenzprojekt</span><h2>Projekt 02</h2><p>Details zu Bauaufgabe und Umsetzung erhalten Sie auf Anfrage.</p><span class="project-card-link">Projekt ansehen <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span></div>
                 </a>
                 <a class="project-card" href="projekt.html?projekt=03">
                     <div class="project-card-media"><img class="project-card-image" src="assets/projekte/projekt-03.jpg" alt="Referenzfoto 03" loading="lazy"><span class="project-card-number">03</span></div>
-                    <div class="project-card-copy"><span class="section-eyebrow">Foto aus der bisherigen Galerie</span><h2>Projekt 03</h2><p>Projektname und weitere Angaben nach Freigabe ergänzen.</p><span class="project-card-link">Projekt ansehen <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span></div>
+                    <div class="project-card-copy"><span class="section-eyebrow">Referenzprojekt</span><h2>Projekt 03</h2><p>Details zu Bauaufgabe und Umsetzung erhalten Sie auf Anfrage.</p><span class="project-card-link">Projekt ansehen <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span></div>
                 </a>
                 <a class="project-card" href="projekt.html?projekt=04">
                     <div class="project-card-media"><img class="project-card-image" src="assets/projekte/projekt-04.jpg" alt="Referenzfoto 04" loading="lazy"><span class="project-card-number">04</span></div>
-                    <div class="project-card-copy"><span class="section-eyebrow">Foto aus der bisherigen Galerie</span><h2>Projekt 04</h2><p>Projektname und weitere Angaben nach Freigabe ergänzen.</p><span class="project-card-link">Projekt ansehen <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span></div>
+                    <div class="project-card-copy"><span class="section-eyebrow">Referenzprojekt</span><h2>Projekt 04</h2><p>Details zu Bauaufgabe und Umsetzung erhalten Sie auf Anfrage.</p><span class="project-card-link">Projekt ansehen <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span></div>
                 </a>
                 <a class="project-card" href="projekt.html?projekt=05">
                     <div class="project-card-media"><img class="project-card-image" src="assets/projekte/projekt-05.jpg" alt="Referenzfoto 05" loading="lazy"><span class="project-card-number">05</span></div>
-                    <div class="project-card-copy"><span class="section-eyebrow">Foto aus der bisherigen Galerie</span><h2>Projekt 05</h2><p>Projektname und weitere Angaben nach Freigabe ergänzen.</p><span class="project-card-link">Projekt ansehen <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span></div>
+                    <div class="project-card-copy"><span class="section-eyebrow">Referenzprojekt</span><h2>Projekt 05</h2><p>Details zu Bauaufgabe und Umsetzung erhalten Sie auf Anfrage.</p><span class="project-card-link">Projekt ansehen <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span></div>
                 </a>
                 <a class="project-card" href="projekt.html?projekt=06">
                     <div class="project-card-media"><img class="project-card-image" src="assets/projekte/projekt-06.jpg" alt="Referenzfoto 06" loading="lazy"><span class="project-card-number">06</span></div>
-                    <div class="project-card-copy"><span class="section-eyebrow">Foto aus der bisherigen Galerie</span><h2>Projekt 06</h2><p>Projektname und weitere Angaben nach Freigabe ergänzen.</p><span class="project-card-link">Projekt ansehen <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span></div>
+                    <div class="project-card-copy"><span class="section-eyebrow">Referenzprojekt</span><h2>Projekt 06</h2><p>Details zu Bauaufgabe und Umsetzung erhalten Sie auf Anfrage.</p><span class="project-card-link">Projekt ansehen <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span></div>
                 </a>
                 <a class="project-card" href="projekt.html?projekt=07">
                     <div class="project-card-media"><img class="project-card-image" src="assets/projekte/projekt-07.jpg" alt="Referenzfoto 07" loading="lazy"><span class="project-card-number">07</span></div>
-                    <div class="project-card-copy"><span class="section-eyebrow">Foto aus der bisherigen Galerie</span><h2>Projekt 07</h2><p>Projektname und weitere Angaben nach Freigabe ergänzen.</p><span class="project-card-link">Projekt ansehen <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span></div>
+                    <div class="project-card-copy"><span class="section-eyebrow">Referenzprojekt</span><h2>Projekt 07</h2><p>Details zu Bauaufgabe und Umsetzung erhalten Sie auf Anfrage.</p><span class="project-card-link">Projekt ansehen <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span></div>
                 </a>
                 <a class="project-card" href="projekt.html?projekt=08">
                     <div class="project-card-media"><img class="project-card-image" src="assets/projekte/projekt-08.jpg" alt="Referenzfoto 08" loading="lazy"><span class="project-card-number">08</span></div>
-                    <div class="project-card-copy"><span class="section-eyebrow">Foto aus der bisherigen Galerie</span><h2>Projekt 08</h2><p>Projektname und weitere Angaben nach Freigabe ergänzen.</p><span class="project-card-link">Projekt ansehen <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span></div>
+                    <div class="project-card-copy"><span class="section-eyebrow">Referenzprojekt</span><h2>Projekt 08</h2><p>Details zu Bauaufgabe und Umsetzung erhalten Sie auf Anfrage.</p><span class="project-card-link">Projekt ansehen <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span></div>
                 </a>
                 <a class="project-card" href="projekt.html?projekt=09">
                     <div class="project-card-media"><img class="project-card-image" src="assets/projekte/projekt-09.jpg" alt="Referenzfoto 09" loading="lazy"><span class="project-card-number">09</span></div>
-                    <div class="project-card-copy"><span class="section-eyebrow">Foto aus der bisherigen Galerie</span><h2>Projekt 09</h2><p>Projektname und weitere Angaben nach Freigabe ergänzen.</p><span class="project-card-link">Projekt ansehen <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span></div>
+                    <div class="project-card-copy"><span class="section-eyebrow">Referenzprojekt</span><h2>Projekt 09</h2><p>Details zu Bauaufgabe und Umsetzung erhalten Sie auf Anfrage.</p><span class="project-card-link">Projekt ansehen <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span></div>
                 </a>
                 <a class="project-card" href="projekt.html?projekt=10">
                     <div class="project-card-media"><img class="project-card-image" src="assets/projekte/projekt-10.jpg" alt="Referenzfoto 10" loading="lazy"><span class="project-card-number">10</span></div>
-                    <div class="project-card-copy"><span class="section-eyebrow">Foto aus der bisherigen Galerie</span><h2>Projekt 10</h2><p>Projektname und weitere Angaben nach Freigabe ergänzen.</p><span class="project-card-link">Projekt ansehen <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span></div>
+                    <div class="project-card-copy"><span class="section-eyebrow">Referenzprojekt</span><h2>Projekt 10</h2><p>Details zu Bauaufgabe und Umsetzung erhalten Sie auf Anfrage.</p><span class="project-card-link">Projekt ansehen <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span></div>
                 </a>
                 <a class="project-card" href="projekt.html?projekt=11">
                     <div class="project-card-media"><img class="project-card-image" src="assets/projekte/projekt-11.jpg" alt="Referenzfoto 11" loading="lazy"><span class="project-card-number">11</span></div>
-                    <div class="project-card-copy"><span class="section-eyebrow">Foto aus der bisherigen Galerie</span><h2>Projekt 11</h2><p>Projektname und weitere Angaben nach Freigabe ergänzen.</p><span class="project-card-link">Projekt ansehen <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span></div>
+                    <div class="project-card-copy"><span class="section-eyebrow">Referenzprojekt</span><h2>Projekt 11</h2><p>Details zu Bauaufgabe und Umsetzung erhalten Sie auf Anfrage.</p><span class="project-card-link">Projekt ansehen <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span></div>
                 </a>
             </div>
-            <p class="placeholder-note">Die elf Fotos stammen aus der bisherigen Projektgalerie. Projektnamen, Standorte, Leistungen und Zeiträume bitte vor Veröffentlichung ergänzen und freigeben.</p>
         </section>
         <section class="detail-cta">
             <div><span class="section-eyebrow">Ihr Projekt</span><h2>Die nächste Referenz könnte Ihre sein.</h2><p>Erzählen Sie uns von Ihrem Vorhaben im Hallen- und Gewerbebau.</p></div>

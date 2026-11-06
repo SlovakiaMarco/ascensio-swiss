@@ -5,6 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Beton-Skelettbau | Ascensio Swiss</title>
     <meta name="description" content="Informationen zu Beton-Skelettbau für Produktions- und Gewerbehallen von Ascensio Swiss.">
+    <script>
+        (function (d) {
+            try {
+                var s = window.sessionStorage;
+                if (s.getItem('as-wipe')) {
+                    s.removeItem('as-wipe');
+                    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) { d.documentElement.classList.add('wipe-in'); }
+                }
+            } catch (e) {}
+        })(document);
+    </script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
@@ -16,15 +27,20 @@
     <header class="detail-topbar">
         <a href="index.html#hallenbau" class="detail-back"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Alle Hallentypen</a>
         <a href="index.html" class="detail-brand"><img src="assets/logo.svg" alt="Ascensio Swiss – Startseite"></a>
-        <nav class="detail-nav" aria-label="Hauptnavigation">
-            <a href="projekte.html">Projekte</a><a href="ueber-uns.html">Über uns</a><a href="kontakt.html">Kontakt</a>
-        </nav>
-        <a href="index.html?anfrage=Beton-Skelettbau#kontakt" class="detail-top-cta">Projekt anfragen <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+        <div class="detail-topbar-actions">
+            <nav class="detail-nav" aria-label="Hauptnavigation">
+                <a href="projekte.html">Projekte</a><a href="ueber-uns.html">Über uns</a><a href="kontakt.html">Kontakt</a>
+            </nav>
+            <a href="index.html?anfrage=Beton-Skelettbau#kontakt" class="detail-top-cta">Projekt anfragen <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+            <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="mobile-menu" aria-label="Menü öffnen">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
     </header>
 
     <main>
         <section class="detail-hero">
-            <div class="detail-hero-image image-placeholder" role="img" aria-label="Bildplatzhalter: Beton-Skelettbau"><span class="image-placeholder-label">Bild einsetzen</span></div>
+            <div class="detail-hero-image detail-hero-blueprint" aria-hidden="true"><span class="detail-hero-blueprint-label">TRAGWERK / 01</span><svg viewBox="0 0 320 180" fill="none"><path class="drawing-grid" d="M24 28H296M24 68H296M24 108H296M24 148H296M56 18V162M112 18V162M168 18V162M224 18V162M280 18V162"/><path class="drawing-main" d="M54 52H266M54 54V144M266 54V144M54 144H266M112 54V144M168 54V144M224 54V144"/><path class="drawing-accent" d="M46 48H274M46 148H274M104 54V144M176 54V144"/><path class="drawing-dimension" d="M54 36V28M266 36V28M54 32H266M160 28L166 32L160 36"/></svg></div>
             <div class="detail-hero-shade"></div>
             <div class="detail-hero-copy">
                 <span class="section-eyebrow">01 / Betonbau</span>

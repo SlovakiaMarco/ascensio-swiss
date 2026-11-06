@@ -4,7 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Beton- und Stahlhallen | Ascensio Swiss</title>
-    <meta name="description" content="Ascensio Swiss plant und begleitet Beton- und Stahlhallen für Logistik, Produktion und Gewerbe in der Schweiz.">
+    <meta name="description" content="Ascensio Swiss – Schweizer Bauunternehmen für Beton- und Stahlhallen. Über 20 Jahre Erfahrung im Hallenbau für Logistik, Produktion und Gewerbe.">
+    <script>
+        (function (d) {
+            var r = d.documentElement;
+            try {
+                var s = window.sessionStorage;
+                var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+                if (s.getItem('as-wipe')) {
+                    s.removeItem('as-wipe');
+                    if (!reduced) { r.classList.add('wipe-in'); }
+                } else if (!s.getItem('as-intro') && !reduced) {
+                    r.classList.add('preload');
+                }
+            } catch (e) {}
+        })(document);
+    </script>
 
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -39,6 +54,8 @@
     </script>
 
     <!-- External Styles & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
 
@@ -51,9 +68,23 @@
 </head>
 <body x-data="site" class="antialiased">
 
-    <nav class="section-nav" aria-label="Seitenabschnitte">
+    <!-- PRELOADER (only on the first visit per session) -->
+    <div class="preloader" aria-hidden="true">
+        <div class="preloader-panel preloader-panel--red"></div>
+        <div class="preloader-panel preloader-panel--dark"></div>
+        <div class="preloader-inner">
+            <svg class="preloader-logo" viewBox="0 0 489 448" fill="none">
+                <path pathLength="1" d="M1.52,131.35c0-36.58,13.08-67.62,39.23-93.11C66.91,12.74,99.8,0,139.41,0c44.7,0,78.98,14.41,102.85,43.23,23.88,28.82,35.81,67.06,35.81,114.72v141.32c0,46-13.08,82.16-39.23,108.49-26.15,26.32-59.3,39.49-99.42,39.49s-73.89-12.75-99.8-38.24C13.71,383.52.76,352.2.76,315.07c0-60.41,32.76-98.93,98.28-115.56l80-20.78c20.31-4.99,30.47-12.47,30.47-22.45v-15.8c0-23.28-6.47-41.7-19.43-55.28-12.95-13.58-29.58-20.37-49.9-20.37s-37.71,6.79-50.67,20.37c-12.95,13.58-19.43,29.79-19.43,48.64v5.82c0,16.07-11.43,24.11-34.29,24.11S1.52,154.9,1.52,137.17v-5.82ZM189.7,362.04c13.21-13.58,19.81-33.11,19.81-58.61v-75.65c-3.55,4.44-10.92,8.32-22.09,11.64l-76.95,20.79c-27.43,8.31-41.14,27.43-41.14,57.36,0,17.73,6.6,32.97,19.81,45.72,13.21,12.74,30.22,19.12,51.04,19.12s36.31-6.79,49.52-20.37"/>
+                <path pathLength="1" d="M487.85,137.39c0,17.74-11.41,26.6-34.23,26.6s-34.22-8.04-34.22-24.11v-5.82c0-18.85-6.46-35.06-19.39-48.64-12.93-13.58-29.79-20.37-50.57-20.37s-36.89,6.79-49.81,20.37c-12.93,13.58-19.39,32.01-19.39,55.28v15.8c0,9.98,10.14,17.46,30.42,22.45l79.86,20.78c65.41,16.63,98.11,55.15,98.11,115.56,0,37.13-12.93,68.44-38.79,93.94-25.85,25.49-59.06,38.24-99.63,38.24s-73.13-13.16-99.24-39.49c-26.11-26.33-39.17-62.49-39.17-108.49v-141.32c0-47.66,11.91-85.91,35.74-114.72C271.35,14.63,305.58.22,350.19.22c39.56,0,72.38,12.74,98.49,38.24,26.11,25.5,39.17,56.53,39.17,93.11v5.82ZM349.43,382.63c20.79,0,37.77-6.38,50.96-19.12,13.18-12.75,19.77-27.99,19.77-45.72,0-29.93-13.69-49.05-41.06-57.36l-76.81-20.79c-11.16-3.32-18.51-7.21-22.06-11.64v75.65c0,25.5,6.59,45.03,19.77,58.61,13.19,13.58,29.66,20.37,49.44,20.37"/>
+            </svg>
+            <div class="preloader-meta"><span>Ascensio Swiss</span><span class="preloader-count">000</span></div>
+            <div class="preloader-bar"><span></span></div>
+        </div>
+    </div>
+
+    <nav class="section-nav" aria-label="Hauptnavigation">
         <div class="max-w-7xl mx-auto px-6">
-            <a href="#main-content" class="section-nav-brand" aria-label="Ascensio Swiss — zur Startseite">
+            <a href="#main-content" class="section-nav-brand" aria-label="Ascensio Swiss — zum Seitenanfang">
                 <img src="assets/logo.svg" alt="" aria-hidden="true">
             </a>
             <div class="section-nav-links">
@@ -64,14 +95,17 @@
                 <a href="#gewerke"><span>05</span> Leistungen</a>
                 <a href="kontakt.html"><span>06</span> Kontakt</a>
             </div>
-            <a href="kontakt.html" class="section-nav-cta">
+            <a href="kontakt.html" class="section-nav-cta btn btn--primary btn--invert btn--sm">
                 Projekt anfragen <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
             </a>
+            <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="mobile-menu" aria-label="Menü öffnen">
+                <span></span><span></span><span></span>
+            </button>
         </div>
     </nav>
 
     <!-- HERO SECTION -->
-    <section id="main-content" class="hero-section relative bg-swiss-dark border-b border-slate-800">
+    <section id="main-content" class="hero-section">
         <span class="hero-side-line" aria-hidden="true"></span>
         <div class="hero-media" aria-hidden="true">
             <video class="hero-video" autoplay muted loop playsinline preload="metadata" aria-label="Videoansicht einer Ascensio Swiss Halle">
@@ -80,63 +114,118 @@
             </video>
         </div>
         <div class="hero-shade" aria-hidden="true"></div>
-        
+        <div class="hero-grid" aria-hidden="true"></div>
+
         <div class="hero-inner max-w-7xl mx-auto px-6">
-            <div class="hero-kicker text-white/75 text-sm font-semibold uppercase tracking-[0.18em]">
-                Ascensio Swiss <span class="text-swiss-red">/</span> Hallenbau
+            <div class="hero-topline">
+                <span class="hero-kicker"><span class="hero-kicker-text">Ascensio Swiss <span>/</span> Hallenbau</span></span>
+                <span class="hero-coords">47.30° N / 8.69° E — Egg b. Zürich</span>
             </div>
 
-            <div class="hero-heading-row grid lg:grid-cols-12 gap-8 lg:gap-12 items-end">
-                <h1 class="hero-title lg:col-span-9 text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-black text-white tracking-tight leading-[1.08]">
-                    <span class="hero-title-line"><span>Hallen für</span></span>
-                    <span class="hero-title-line"><span><span class="text-swiss-red">morgen.</span></span></span>
-                </h1>
-                <p class="hero-description lg:col-span-3 text-base sm:text-lg text-slate-200 leading-relaxed">
-                    Beton- und Stahlhallen für Logistik, Produktion und Gewerbe. Klar geplant und in der Schweiz begleitet.
-                </p>
-            </div>
+            <h1 class="hero-title">
+                <span class="hero-title-line"><span>Hallen für</span></span>
+                <span class="hero-title-line"><span><span class="is-red">morgen.</span></span></span>
+            </h1>
 
             <div class="hero-bottom">
-                <div class="hero-actions flex flex-col sm:flex-row gap-8">
-                    <a href="#hallenbau" class="hero-link hero-link-primary">
-                        <span>Hallen entdecken</span>
-                        <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                <p class="hero-description">
+                    Beton- und Stahlhallen für Logistik, Produktion und Gewerbe. Mit über 20 Jahren Erfahrung geplant, gebaut und in der Schweiz begleitet.
+                </p>
+                <div class="hero-actions">
+                    <a href="#hallenbau" class="btn btn--primary btn--invert">
+                        Hallen entdecken <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
                     </a>
-                    <a href="#kontakt" class="hero-link">
-                        <span>Projekt besprechen</span>
-                        <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                    <a href="#kontakt" class="btn btn--ghost">
+                        Projekt besprechen <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
                     </a>
-                </div>
-
-                <div class="hero-stats">
-                    <span>Betonbau</span>
-                    <span>Stahlbau</span>
-                    <span>Projektleitung Schweiz</span>
                 </div>
             </div>
         </div>
+
+        <a href="#kennzahlen" class="hero-scroll" aria-label="Zum nächsten Abschnitt scrollen">
+            <span>Scroll</span>
+            <i class="hero-scroll-line" aria-hidden="true"></i>
+        </a>
+        <span class="hazard-strip hero-hazard" aria-hidden="true"></span>
     </section>
 
-    <!-- MAIN OFFER: CONCRETE AND STEEL HALLS -->
-    <section id="hallenbau" class="editorial-section py-24 bg-swiss-concrete border-b border-slate-300">
+    <!-- KEY FIGURES -->
+    <section id="kennzahlen" class="stats-band texture-grid" aria-label="Ascensio Swiss in Zahlen">
         <div class="max-w-7xl mx-auto px-6">
-            
-            <div class="editorial-heading max-w-7xl mx-auto mb-14">
+            <dl class="stats-grid">
+                <div class="stat">
+                    <dt>Jahre Erfahrung im Beton- und Stahlhallenbau</dt>
+                    <dd><span data-count="20">20</span><span class="stat-plus" aria-hidden="true">+</span></dd>
+                </div>
+                <div class="stat">
+                    <dt>Referenzprojekte in unserer Galerie</dt>
+                    <dd><span data-count="11">11</span></dd>
+                </div>
+                <div class="stat">
+                    <dt>Bauweisen im Fokus: Beton &amp; Stahl</dt>
+                    <dd><span data-count="2">02</span></dd>
+                </div>
+                <div class="stat">
+                    <dt>Stunden erreichbar für unsere Bauteams</dt>
+                    <dd><span data-count="24">24</span><span class="stat-plus" aria-hidden="true">h</span></dd>
+                </div>
+            </dl>
+        </div>
+    </section>
+
+    <div class="marquee" aria-hidden="true">
+        <div class="marquee-band">
+            <div class="marquee-track">
+                <div class="marquee-group">
+                    <span>Beton-Skelettbau</span><i></i>
+                    <span class="is-outline">Stahlhallen</span><i></i>
+                    <span>Logistik</span><i></i>
+                    <span class="is-outline">Produktion</span><i></i>
+                    <span>Gewerbe</span><i></i>
+                    <span class="is-outline">Projektleitung Schweiz</span><i></i>
+                    <span>Beton-Skelettbau</span><i></i>
+                    <span class="is-outline">Stahlhallen</span><i></i>
+                    <span>Logistik</span><i></i>
+                    <span class="is-outline">Produktion</span><i></i>
+                    <span>Gewerbe</span><i></i>
+                    <span class="is-outline">Projektleitung Schweiz</span><i></i>
+                </div>
+                <div class="marquee-group">
+                    <span>Beton-Skelettbau</span><i></i>
+                    <span class="is-outline">Stahlhallen</span><i></i>
+                    <span>Logistik</span><i></i>
+                    <span class="is-outline">Produktion</span><i></i>
+                    <span>Gewerbe</span><i></i>
+                    <span class="is-outline">Projektleitung Schweiz</span><i></i>
+                    <span>Beton-Skelettbau</span><i></i>
+                    <span class="is-outline">Stahlhallen</span><i></i>
+                    <span>Logistik</span><i></i>
+                    <span class="is-outline">Produktion</span><i></i>
+                    <span>Gewerbe</span><i></i>
+                    <span class="is-outline">Projektleitung Schweiz</span><i></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN OFFER: CONCRETE AND STEEL HALLS -->
+    <section id="hallenbau" class="editorial-section texture-concrete py-24 sm:py-28 bg-swiss-concrete">
+        <div class="max-w-7xl mx-auto px-6">
+
+            <div class="editorial-heading mb-14">
                 <div>
                     <span class="section-eyebrow">01 / Unsere Hauptkompetenz</span>
-                    <h2 class="text-4xl sm:text-5xl lg:text-6xl font-black text-slate-900 tracking-tight">
-                        Hallenbau, der<br><span class="text-swiss-red">zum Betrieb passt.</span>
-                    </h2>
+                    <h2 class="section-title">Hallenbau, der<br><span>zum Betrieb passt.</span></h2>
                 </div>
-                <p class="max-w-lg text-slate-600 text-base sm:text-lg leading-relaxed">
+                <p class="editorial-lead">
                     Von der Tragstruktur bis zur Arbeitsumgebung: Wir wählen die Bauweise nach Nutzung, Standort und den Anforderungen Ihres Projekts.
                 </p>
             </div>
 
-            <div class="grid md:grid-cols-3 gap-8">
+            <div class="hall-grid">
                 <a href="beton-skelettbau.html" class="hall-card-link" aria-label="Mehr über Beton-Skelettbau erfahren">
                     <article class="hall-card">
-                        <div class="hall-card-visual hall-visual-concrete" aria-hidden="true">
+                        <div class="hall-card-visual" aria-hidden="true">
                             <span class="hall-card-visual-label">TRAGWERK / 01</span>
                             <svg viewBox="0 0 320 180" fill="none">
                                 <path class="drawing-grid" d="M24 28H296M24 68H296M24 108H296M24 148H296M56 18V162M112 18V162M168 18V162M224 18V162M280 18V162"/>
@@ -147,6 +236,7 @@
                             <span class="hall-card-visual-caption">Beton-Skelettbau</span>
                         </div>
                         <div class="hall-card-content">
+                            <span class="hall-card-num" aria-hidden="true">01</span>
                             <span class="hall-card-code">01 / TRAGWERK</span>
                             <h3>Beton-Skelettbau</h3>
                             <p>Vorgefertigte Stützen und Binder bilden eine robuste Tragstruktur für Produktions- und Gewerbebauten.</p>
@@ -157,7 +247,7 @@
 
                 <a href="stahlhallen.html" class="hall-card-link" aria-label="Mehr über Stahlhallen erfahren">
                     <article class="hall-card">
-                        <div class="hall-card-visual hall-visual-steel" aria-hidden="true">
+                        <div class="hall-card-visual" aria-hidden="true">
                             <span class="hall-card-visual-label">SPANNWEITE / 02</span>
                             <svg viewBox="0 0 320 180" fill="none">
                                 <path class="drawing-grid" d="M24 28H296M24 68H296M24 108H296M24 148H296M56 18V162M112 18V162M168 18V162M224 18V162M280 18V162"/>
@@ -168,6 +258,7 @@
                             <span class="hall-card-visual-caption">Stahlhallen</span>
                         </div>
                         <div class="hall-card-content">
+                            <span class="hall-card-num" aria-hidden="true">02</span>
                             <span class="hall-card-code">02 / STAHLBAU</span>
                             <h3>Stahlhallen</h3>
                             <p>Stahlkonstruktionen schaffen flexibel nutzbare Flächen für Logistik, Produktion und Gewerbe.</p>
@@ -178,7 +269,7 @@
 
                 <a href="gewerbe-buero.html" class="hall-card-link" aria-label="Mehr über Gewerbe- und Bürogebäude erfahren">
                     <article class="hall-card">
-                        <div class="hall-card-visual hall-visual-commercial" aria-hidden="true">
+                        <div class="hall-card-visual" aria-hidden="true">
                             <span class="hall-card-visual-label">NUTZUNG / 03</span>
                             <svg viewBox="0 0 320 180" fill="none">
                                 <path class="drawing-grid" d="M24 28H296M24 68H296M24 108H296M24 148H296M56 18V162M112 18V162M168 18V162M224 18V162M280 18V162"/>
@@ -189,6 +280,7 @@
                             <span class="hall-card-visual-caption">Gewerbe &amp; Büro</span>
                         </div>
                         <div class="hall-card-content">
+                            <span class="hall-card-num" aria-hidden="true">03</span>
                             <span class="hall-card-code">03 / GEBÄUDEKONZEPT</span>
                             <h3>Gewerbe &amp; Büro</h3>
                             <p>Produktions- und Arbeitsbereiche werden in einem abgestimmten Gebäudekonzept zusammengeführt.</p>
@@ -200,151 +292,206 @@
 
             <div class="hall-section-cta">
                 <p>Sie planen ein konkretes Vorhaben?</p>
-                <a href="#kontakt" class="text-link">Hallenprojekt besprechen <i class="fa-solid fa-arrow-right"></i></a>
+                <a href="#kontakt" class="text-link">Hallenprojekt besprechen <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
             </div>
         </div>
     </section>
 
+    <!-- PROJECTS -->
     <section id="projekte" class="projects-teaser">
-        <div class="projects-teaser-copy">
+        <div class="projects-copy">
             <span class="section-eyebrow">02 / Einblicke</span>
-            <h2>Projekte, die<br><span>Form annehmen.</span></h2>
-            <p>Hier entsteht Platz für ausgewählte Referenzen aus dem Hallen- und Gewerbebau. Projektdaten und Bildmaterial können nach Freigabe ergänzt werden.</p>
-            <a href="projekte.html" class="detail-button">Alle Projekte ansehen <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+            <h2 class="section-title section-title--sm">Projekte, die<br><span>Form annehmen.</span></h2>
+            <p>Sehen Sie sich eine Auswahl unserer erfolgreich umgesetzten Projekte an – Referenzen aus der Schweiz sowie aus Mittel- und Westeuropa.</p>
+            <a href="projekte.html" class="btn btn--dark">Alle Projekte ansehen <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
         </div>
-        <a href="projekte.html" class="project-teaser-image image-placeholder" aria-label="Projektübersicht öffnen">
-            <span class="image-placeholder-label">Projektbild einsetzen</span>
-            <span class="project-teaser-index">AS / 01</span>
-        </a>
+        <div class="projects-collage">
+            <a href="projekt.html?projekt=05" class="collage-item collage-item--main">
+                <img src="assets/projekte/projekt-05.jpg" alt="Referenzfoto 05" loading="lazy" data-parallax="5">
+                <span class="collage-tag">AS / 05 <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span>
+            </a>
+            <a href="projekt.html?projekt=06" class="collage-item">
+                <img src="assets/projekte/projekt-06.jpg" alt="Referenzfoto 06" loading="lazy" data-parallax="5">
+                <span class="collage-tag">AS / 06 <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span>
+            </a>
+            <a href="projekt.html?projekt=02" class="collage-item">
+                <img src="assets/projekte/projekt-02.jpg" alt="Referenzfoto 02" loading="lazy" data-parallax="5">
+                <span class="collage-tag">AS / 02 <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span>
+            </a>
+        </div>
     </section>
 
     <!-- PROJECT PROCESS -->
-    <section id="ablauf" class="py-24 bg-swiss-dark text-white">
+    <section id="ablauf" class="process-section texture-grid">
+        <span class="process-bg-word" aria-hidden="true">Prozess</span>
         <div class="max-w-7xl mx-auto px-6">
-            <div class="editorial-heading editorial-heading-dark mb-14">
+            <div class="editorial-heading editorial-heading-dark mb-16">
                 <div>
                     <span class="section-eyebrow">03 / Zusammenarbeit</span>
-                    <h2 class="text-4xl sm:text-5xl font-black tracking-tight">Vom Bedarf zur Halle.</h2>
+                    <h2 class="section-title section-title--light">Vom Bedarf<br><span>zur Halle.</span></h2>
                 </div>
-                <p class="max-w-lg text-slate-300 text-base sm:text-lg leading-relaxed">
+                <p class="editorial-lead">
                     Ein klarer Ablauf hält Entscheidungen, Planung und Umsetzung zusammen.
                 </p>
             </div>
 
-            <div class="process-list">
-                <article class="process-step">
-                    <span class="process-number">01</span>
-                    <div>
+            <div class="process-timeline">
+                <div class="process-track" aria-hidden="true"><span class="process-progress"></span></div>
+                <ol class="process-list">
+                    <li class="process-step">
+                        <span class="process-dot" aria-hidden="true"></span>
+                        <span class="process-number">01</span>
                         <h3>Bedarf verstehen</h3>
                         <p>Nutzung, Standort und Anforderungen an die Halle gemeinsam klären.</p>
-                    </div>
-                </article>
-                <article class="process-step">
-                    <span class="process-number">02</span>
-                    <div>
+                    </li>
+                    <li class="process-step">
+                        <span class="process-dot" aria-hidden="true"></span>
+                        <span class="process-number">02</span>
                         <h3>Lösung planen</h3>
                         <p>Bauweise und Projektumfang passend zum Vorhaben abstimmen.</p>
-                    </div>
-                </article>
-                <article class="process-step">
-                    <span class="process-number">03</span>
-                    <div>
+                    </li>
+                    <li class="process-step">
+                        <span class="process-dot" aria-hidden="true"></span>
+                        <span class="process-number">03</span>
                         <h3>Umsetzung koordinieren</h3>
                         <p>Projektleitung und Ausführung auf die vereinbarten Ziele ausrichten.</p>
-                    </div>
-                </article>
-                <article class="process-step">
-                    <span class="process-number">04</span>
-                    <div>
+                    </li>
+                    <li class="process-step">
+                        <span class="process-dot" aria-hidden="true"></span>
+                        <span class="process-number">04</span>
                         <h3>Projekt übergeben</h3>
                         <p>Die Ausführung abschliessen und die nächsten Schritte gemeinsam prüfen.</p>
-                    </div>
-                </article>
+                    </li>
+                </ol>
             </div>
         </div>
     </section>
 
     <!-- COMPANY -->
-    <section id="ueber-uns" class="py-24 bg-swiss-concrete border-b border-slate-300">
+    <section id="ueber-uns" class="about-section texture-concrete">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="grid lg:grid-cols-12 gap-12 items-center">
-                <div class="lg:col-span-7 space-y-6">
+            <div class="about-grid">
+                <div class="about-copy">
                     <span class="section-eyebrow">04 / Ascensio Swiss</span>
-                    <h2 class="text-4xl sm:text-5xl font-black text-slate-900 tracking-tight">
-                        Neuer Impuls.<br>Klarer Fokus.
-                    </h2>
-                    <div class="space-y-4 text-slate-600 text-base leading-relaxed">
-                        <p>
-                            Als Schweizer Unternehmen greifen wir auf die Erfahrung unserer Fachkräfte zurück. Sie bringen mehr als 20 Jahre Erfahrung aus Bauprojekten in Mittel- und Westeuropa mit. Nach personellen Veränderungen in Geschäftsführung und Aktionariat richten wir unser Angebot klarer aus: <strong class="text-slate-900 font-bold">Beton- und Stahlhallen</strong> für Logistik, Produktion und Gewerbe stehen im Mittelpunkt.
-                        </p>
-                        <p>
-                            Unsere Erfahrung in der Bereitstellung qualifizierter Bauteams bleibt Teil unserer Arbeit. Sanitär, Heizung, Elektro und weitere Gewerke ergänzen den Hallenbau projektbezogen.
-                        </p>
-                    </div>
+                    <h2 class="section-title">Erfahrung,<br><span>die trägt.</span></h2>
+                    <p>
+                        Ascensio Swiss ist ein Schweizer Bauunternehmen mit Sitz in Egg bei Zürich. Unser Kerngeschäft sind <strong>Beton- und Stahlhallen</strong> für Logistik, Produktion und Gewerbe – von der ersten Abklärung über die Planung bis zur Übergabe.
+                    </p>
+                    <p>
+                        Hinter uns stehen Fachleute mit mehr als 20 Jahren Erfahrung im Hallenbau und in zahlreichen Bauprojekten in Mittel- und Westeuropa. Eigene, qualifizierte Bauteams sorgen dafür, dass Planung und Ausführung zusammenpassen.
+                    </p>
 
                     <div class="about-facts">
                         <span>Schweizer Unternehmen</span>
-                        <span>20+ Jahre Erfahrung der Fachkräfte</span>
+                        <span>20+ Jahre Erfahrung im Hallenbau</span>
                         <span>Projekte in Mittel- und Westeuropa</span>
                     </div>
+
+                    <a href="ueber-uns.html" class="btn btn--dark">Lernen Sie uns kennen <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
                 </div>
 
-                <div class="lg:col-span-5">
+                <div class="about-visual">
+                    <div class="about-photo">
+                        <img src="assets/unternehmen/bauteam-02.jpg" alt="Mitarbeiter von Ascensio Swiss mit rotem Schutzhelm auf einer Baustelle" loading="lazy" data-parallax="6">
+                    </div>
                     <div class="about-focus">
                         <span class="section-eyebrow">Unser Schwerpunkt</span>
                         <h3>Beton.<br>Stahl.<br><span>Hallenbau.</span></h3>
-                        <p>Ein klarer Fokus für die nächste Entwicklungsphase von Ascensio Swiss.</p>
-                        <a href="ueber-uns.html" class="text-link">Lernen Sie uns kennen <i class="fa-solid fa-arrow-right"></i></a>
+                        <p>Unser Kerngeschäft – geplant und ausgeführt mit eigenen Bauteams.</p>
                     </div>
                 </div>
             </div>
-            <a href="ueber-uns.html" class="about-more-link">Mehr über unser Unternehmen und unser Team <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+        </div>
+    </section>
+
+    <!-- WHY ASCENSIO SWISS -->
+    <section id="warum" class="why-section texture-grid">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="editorial-heading editorial-heading-dark mb-14">
+                <div>
+                    <span class="section-eyebrow">Warum Ascensio Swiss</span>
+                    <h2 class="section-title section-title--light">Darauf können<br><span>Sie bauen.</span></h2>
+                </div>
+                <p class="editorial-lead">
+                    Ein stabiler Partner für Ihr Hallenprojekt: professionelle Abläufe, faire Bedingungen und Teams, die Qualität liefern.
+                </p>
+            </div>
+
+            <div class="why-grid">
+                <article class="why-card">
+                    <span class="why-card-num">01</span>
+                    <i class="fa-solid fa-warehouse" aria-hidden="true"></i>
+                    <h3>20+ Jahre Hallenbau</h3>
+                    <p>Erfahrung aus zahlreichen Beton- und Stahlbauprojekten in der Schweiz sowie in Mittel- und Westeuropa.</p>
+                </article>
+                <article class="why-card">
+                    <span class="why-card-num">02</span>
+                    <i class="fa-solid fa-helmet-safety" aria-hidden="true"></i>
+                    <h3>Eigene Bauteams</h3>
+                    <p>Zertifizierte Fachkräfte – zuverlässig, flexibel und sofort einsatzbereit für eine Ausführung in gleichbleibender Qualität.</p>
+                </article>
+                <article class="why-card">
+                    <span class="why-card-num">03</span>
+                    <i class="fa-solid fa-screwdriver-wrench" aria-hidden="true"></i>
+                    <h3>Professionelle Ausrüstung</h3>
+                    <p>Werkzeuge von Hilti und Milwaukee, Arbeitskleidung von Strauss und eigene Firmenfahrzeuge.</p>
+                </article>
+                <article class="why-card">
+                    <span class="why-card-num">04</span>
+                    <i class="fa-solid fa-file-shield" aria-hidden="true"></i>
+                    <h3>Komplettservice</h3>
+                    <p>Bewilligungen, Dokumentation, Haftpflichtversicherung und Sicherheitsschulungen – alles aus einer Hand.</p>
+                </article>
+            </div>
         </div>
     </section>
 
     <!-- ADDITIONAL SERVICES -->
-    <section id="gewerke" class="secondary-services py-20 bg-swiss-mist border-b border-slate-300">
+    <section id="gewerke" class="secondary-services py-16 sm:py-20">
         <div class="max-w-7xl mx-auto px-6">
             <div class="secondary-services-copy">
                 <span class="section-eyebrow">05 / Ergänzend zum Hallenbau</span>
-                <h2 class="text-3xl sm:text-4xl font-black text-slate-900">Weitere Gewerke.<br><span>Wenn das Projekt es braucht.</span></h2>
-                <p class="text-slate-600 leading-relaxed">
-                    Sanitär, Heizung, Elektro, Trockenbau, Montage, Malerarbeiten und weitere Baugewerke bleiben als ergänzende Leistungen verfügbar. Der Umfang wird projektbezogen abgestimmt.
+                <h2 class="section-title section-title--xs">Ergänzende Gewerke.<br><span>Wenn das Projekt es braucht.</span></h2>
+                <p>
+                    Neben dem Hallenbau übernehmen wir auf Wunsch weitere Arbeiten – von Wasser und Heizung bis zur Elektroinstallation. Der Umfang wird projektbezogen abgestimmt.
                 </p>
             </div>
             <ul class="service-list">
-                <li><i class="fa-solid fa-faucet-drip"></i> Sanitär & Wasser</li>
-                <li><i class="fa-solid fa-temperature-half"></i> Heizung & Klima</li>
-                <li><i class="fa-solid fa-bolt"></i> Elektrotechnik</li>
-                <li><i class="fa-solid fa-paint-roller"></i> Trockenbau & Montage</li>
-                <li><i class="fa-solid fa-paint-roller"></i> Maler- & Lackierarbeiten</li>
-                <li><i class="fa-solid fa-screwdriver-wrench"></i> Beton, Schweissen & Renovation</li>
+                <li><i class="fa-solid fa-faucet-drip" aria-hidden="true"></i> Sanitär &amp; Wasser</li>
+                <li><i class="fa-solid fa-temperature-half" aria-hidden="true"></i> Heizung &amp; Klima</li>
+                <li><i class="fa-solid fa-bolt" aria-hidden="true"></i> Elektrotechnik</li>
+                <li><i class="fa-solid fa-hammer" aria-hidden="true"></i> Trockenbau &amp; Montage</li>
+                <li><i class="fa-solid fa-paint-roller" aria-hidden="true"></i> Maler- &amp; Lackierarbeiten</li>
+                <li><i class="fa-solid fa-fire-flame-simple" aria-hidden="true"></i> Schweissarbeiten &amp; Rekonstruktionen</li>
             </ul>
         </div>
     </section>
 
     <!-- CONTACT -->
-    <footer id="kontakt" class="bg-slate-900 text-slate-400 text-xs py-16 border-t border-slate-800">
-        <div class="max-w-7xl mx-auto px-6">
+    <footer id="kontakt" class="site-footer">
+        <span class="hazard-strip" aria-hidden="true"></span>
+        <div class="max-w-7xl mx-auto px-6 pt-20 pb-10">
             <div class="footer-lead">
                 <div>
                     <span class="section-eyebrow">06 / Kontakt</span>
-                    <h2 class="text-4xl sm:text-5xl font-black text-white tracking-tight">Planen Sie eine Halle?</h2>
-                    <p class="mt-4 max-w-xl text-slate-400 text-base leading-relaxed">
+                    <h2 class="section-title section-title--light footer-title">Planen Sie<br><span>eine Halle?</span></h2>
+                    <p class="footer-lead-text">
                         Erzählen Sie uns von Ihrem Vorhaben. Gemeinsam klären wir, welche nächsten Schritte sinnvoll sind.
                     </p>
                 </div>
                 <div class="footer-contact-links">
-                    <a href="tel:+41000000000"><i class="fa-solid fa-phone"></i> +41 00 000 0000</a>
-                    <a href="mailto:info@ascensioswiss.ch"><i class="fa-solid fa-envelope"></i> info@ascensioswiss.ch</a>
-                    <a href="kontakt.html" class="footer-inquiry-button">Kontaktseite öffnen <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
-                    <button type="button" @click="modalOpen = true" class="footer-inquiry-button">
-                        Hallenprojekt anfragen <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
-                    </button>
+                    <a href="tel:+41775205626"><i class="fa-solid fa-phone" aria-hidden="true"></i> +41 77 520 56 26</a>
+                    <a href="mailto:info@ascensioswiss.ch"><i class="fa-solid fa-envelope" aria-hidden="true"></i> info@ascensioswiss.ch</a>
+                    <div class="footer-actions">
+                        <button type="button" @click="modalOpen = true" class="btn btn--primary btn--invert">
+                            Hallenprojekt anfragen <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                        </button>
+                        <a href="kontakt.html" class="btn btn--ghost">Kontaktseite <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+                    </div>
                 </div>
             </div>
 
-            <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 py-8 border-t border-slate-800">
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 py-10 border-t border-white/10 text-xs">
                 <div class="space-y-4">
                     <a href="#main-content" aria-label="Zurück zum Seitenanfang">
                         <img src="assets/logo.svg" alt="Ascensio Swiss Logo" class="logo-svg-footer">
@@ -355,19 +502,19 @@
                 </div>
 
                 <div class="space-y-3">
-                    <h3 class="text-white font-bold uppercase tracking-wider text-xs">Entdecken</h3>
-                    <ul class="space-y-2 font-medium">
-                        <li><a href="#hallenbau" class="hover:text-white transition-colors">Beton- & Stahlhallen</a></li>
-                        <li><a href="projekte.html" class="hover:text-white transition-colors">Projekte</a></li>
-                        <li><a href="#ablauf" class="hover:text-white transition-colors">Projektablauf</a></li>
-                        <li><a href="ueber-uns.html" class="hover:text-white transition-colors">Über uns & Team</a></li>
-                        <li><a href="#gewerke" class="hover:text-white transition-colors">Ergänzende Leistungen</a></li>
-                        <li><a href="kontakt.html" class="hover:text-white transition-colors">Kontakt</a></li>
+                    <h3 class="footer-heading">Entdecken</h3>
+                    <ul class="footer-links">
+                        <li><a href="#hallenbau">Beton- &amp; Stahlhallen</a></li>
+                        <li><a href="projekte.html">Projekte</a></li>
+                        <li><a href="#ablauf">Projektablauf</a></li>
+                        <li><a href="ueber-uns.html">Über uns &amp; Team</a></li>
+                        <li><a href="#gewerke">Ergänzende Leistungen</a></li>
+                        <li><a href="kontakt.html">Kontakt</a></li>
                     </ul>
                 </div>
 
                 <div class="space-y-3">
-                    <h4 class="text-white font-bold uppercase tracking-wider text-xs">Hauptsitz Schweiz</h4>
+                    <h3 class="footer-heading">Hauptsitz Schweiz</h3>
                     <div class="space-y-1 text-slate-300 font-medium">
                         <p class="font-bold text-white">Ascensio Swiss</p>
                         <p>8132 Egg b. Zürich</p>
@@ -377,7 +524,7 @@
                 </div>
             </div>
 
-            <div class="pt-8 flex flex-col sm:flex-row justify-between items-center text-slate-500 text-[11px] gap-4">
+            <div class="pt-8 flex flex-col sm:flex-row justify-between items-center text-slate-500 text-[11px] gap-4 border-t border-white/10">
                 <p>© 2026 Ascensio Swiss. Alle Rechte vorbehalten.</p>
                 <div class="footer-legal-links">
                     <a href="datenschutz.html">Datenschutz</a>
@@ -388,34 +535,34 @@
     </footer>
 
     <!-- INQUIRY MODAL -->
-    <div x-show="modalOpen" x-transition.opacity.duration.200ms class="fixed inset-0 z-50 overflow-y-auto" style="display:none;">
-        <div @click="modalOpen = false" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm"></div>
+    <div x-show="modalOpen" x-transition.opacity.duration.200ms class="fixed inset-0 z-50 overflow-y-auto" style="display:none;" data-lenis-prevent>
+        <div @click="modalOpen = false" class="fixed inset-0 bg-slate-900/70 backdrop-blur-sm"></div>
         <div class="relative min-h-screen flex items-center justify-center p-4">
-            <div x-show="modalOpen" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100" x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-95" class="relative bg-white rounded-3xl max-w-lg w-full p-8 border border-slate-200 shadow-2xl space-y-6">
-                <div class="flex justify-between items-center border-b border-slate-100 pb-4">
-                    <h3 class="text-lg font-bold text-slate-900">Unverbindliche Hallenanfrage</h3>
-                    <button @click="modalOpen = false" class="text-slate-400 hover:text-slate-700"><i class="fa-solid fa-xmark text-xl"></i></button>
+            <div x-show="modalOpen" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100" x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-95" class="inquiry-modal relative bg-white max-w-lg w-full p-8 shadow-2xl space-y-6">
+                <div class="flex justify-between items-center border-b border-slate-200 pb-4">
+                    <h3 class="inquiry-modal-title">Unverbindliche Hallenanfrage</h3>
+                    <button type="button" @click="modalOpen = false" class="text-slate-400 hover:text-slate-700" aria-label="Anfrage schliessen"><i class="fa-solid fa-xmark text-xl"></i></button>
                 </div>
                 <form @submit.prevent="submitInquiry($event)" class="space-y-4">
                     <div>
                         <label class="block text-xs font-bold text-slate-700 mb-1">Name / Ansprechpartner *</label>
-                        <input type="text" name="name" required class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm outline-none focus:border-swiss-red">
+                        <input type="text" name="name" required class="w-full px-4 py-2.5 bg-slate-50 border border-slate-300 text-sm outline-none focus:border-swiss-red">
                     </div>
                     <div>
                         <label class="block text-xs font-bold text-slate-700 mb-1">E-Mail *</label>
-                        <input type="email" name="email" required class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm outline-none focus:border-swiss-red">
+                        <input type="email" name="email" required class="w-full px-4 py-2.5 bg-slate-50 border border-slate-300 text-sm outline-none focus:border-swiss-red">
                     </div>
                     <div>
                         <label class="block text-xs font-bold text-slate-700 mb-1">Telefon *</label>
-                        <input type="tel" name="phone" required class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm outline-none focus:border-swiss-red">
+                        <input type="tel" name="phone" required class="w-full px-4 py-2.5 bg-slate-50 border border-slate-300 text-sm outline-none focus:border-swiss-red">
                     </div>
                     <div>
                         <label class="block text-xs font-bold text-slate-700 mb-1">Projektbeschreibung</label>
-                        <textarea name="project" rows="3" class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm outline-none focus:border-swiss-red" placeholder="Fläche in m², Standort, Baubeginn..."></textarea>
+                        <textarea name="project" rows="3" class="w-full px-4 py-2.5 bg-slate-50 border border-slate-300 text-sm outline-none focus:border-swiss-red" placeholder="Fläche in m², Standort, Baubeginn..."></textarea>
                     </div>
                     <p class="text-xs text-slate-500">Beim Absenden öffnet sich Ihr E-Mail-Programm mit den Angaben.</p>
-                    <button type="submit" class="w-full bg-swiss-graphite hover:bg-swiss-graphite-hover text-white font-bold py-3.5 rounded-xl text-sm transition-all action-shadow">
-                        Anfrage per E-Mail vorbereiten
+                    <button type="submit" class="btn btn--primary w-full">
+                        Anfrage per E-Mail vorbereiten <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
                     </button>
                 </form>
             </div>
